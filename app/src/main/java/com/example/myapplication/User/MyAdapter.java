@@ -38,9 +38,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     public void onBindViewHolder(@NonNull MyAdapter.MyViewHolder holder, int position) {
 
         City city= cityArrayList.get(position);
-        Log.e("--TAG", "onBindViewHolder: " + city.getAmaan() );
+        Log.e("--TAG", "onBindViewHolder: " + city.getName() );
         Log.e("--TAG", "onBindViewHolder: " + city.getImageUrl() );
-        holder.name.setText(city.getAmaan());
+        holder.name.setText(city.getName());
         Glide.with(holder.image.getContext()).load(cityArrayList.get(position).getImageUrl()).into(holder.image);
 
 

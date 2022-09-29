@@ -3,12 +3,12 @@ package com.example.myapplication.User;
 import android.net.Uri;
 
 public class City {
-    String amaan;
+    String name;
     Uri ImageUrl;
 
-    City(String name, Uri result){
-        this.amaan = name;
-        this.ImageUrl = result;
+    City(String name, Uri imageUrl){
+        this.name = name;
+        this.ImageUrl = imageUrl;
 
     }
 
@@ -24,16 +24,16 @@ public class City {
 
 
 
-    public City(String amaan) {
-        this.amaan = amaan;
+    public City(String name) {
+        this.name = name;
     }
 
-    public String getAmaan() {
-        return amaan;
+    public String getName() {
+        return name;
     }
 
-    private void setAmaan(String amaan) {
-        this.amaan = amaan;
+    private void setName(String name) {
+        this.name = name;
     }
 
 
