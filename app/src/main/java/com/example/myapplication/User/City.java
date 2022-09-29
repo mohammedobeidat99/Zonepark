@@ -7,6 +7,8 @@ public class City {
     Uri ImageUrl;
 
     City(String name, Uri result){
+        this.amaan = name;
+        this.ImageUrl = result;
 
     }
 
@@ -14,7 +16,7 @@ public class City {
         return ImageUrl;
     }
 
-    public void setImageUrl(Uri imageUrl) {
+    private void setImageUrl(Uri imageUrl) {
         ImageUrl = imageUrl;
     }
 
@@ -30,7 +32,7 @@ public class City {
         return amaan;
     }
 
-    public void setAmaan(String amaan) {
+    private void setAmaan(String amaan) {
         this.amaan = amaan;
     }
 

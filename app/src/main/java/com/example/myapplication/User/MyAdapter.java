@@ -1,6 +1,7 @@
 package com.example.myapplication.User;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,12 +18,12 @@ import java.util.ArrayList;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         Context context;
-        ArrayList<City>cityArrayListlist;
+        ArrayList<City> cityArrayList;
     private int image;
 
-    public MyAdapter(Context context, ArrayList<City> cityArrayListlist) {
+    public MyAdapter(Context context, ArrayList<City> cityArrayList) {
         this.context = context;
-        this.cityArrayListlist = cityArrayListlist;
+        this.cityArrayList = cityArrayList;
     }
 
     @NonNull
@@ -36,19 +37,18 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull MyAdapter.MyViewHolder holder, int position) {
 
-        City city=cityArrayListlist.get(position);
-
+        City city= cityArrayList.get(position);
+        Log.e("--TAG", "onBindViewHolder: " + city.getAmaan() );
+        Log.e("--TAG", "onBindViewHolder: " + city.getImageUrl() );
         holder.name.setText(city.getAmaan());
-        Glide.with(context).load(cityArrayListlist.get(position).getImageUrl()).into(holder.image);
-
-
+        Glide.with(holder.image.getContext()).load(cityArrayList.get(position).getImageUrl()).into(holder.image);
 
 
     }
 
     @Override
     public int getItemCount() {
-        return cityArrayListlist.size();
+        return cityArrayList.size();
     }
     public static class MyViewHolder extends  RecyclerView.ViewHolder{
 
@@ -61,4 +61,5 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
            image=itemView.findViewById(R.id.imageitem);
         }
     }
+
 }
