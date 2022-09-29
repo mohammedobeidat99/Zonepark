@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="required">Required</string>
+    <string name="name">First Name</string>
+</resources>
