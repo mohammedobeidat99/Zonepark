@@ -39,7 +39,7 @@ public class userMain extends AppCompatActivity  {
         list = new ArrayList<>();
         myAdapter = new MyAdapter(this, list);
         recyclerView.setAdapter(myAdapter);
-        firebaseStorage = FirebaseStorage.getInstance().getReference();
+        firebaseStorage = FirebaseStorage.getInstance().getReference().child("City/");
         firebaseStorage.listAll().addOnCompleteListener(task -> {
             List<StorageReference> tasks = task.getResult().getItems();
             for (int i = 0; i < tasks.size(); i++) {

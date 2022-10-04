@@ -49,8 +49,8 @@ public class cities extends AppCompatActivity {
     //image view city&mall
     Button insertcityphoto,insertmallphoto;
     ImageView imageView,imageView2;
-    FirebaseStorage storage;
-    StorageReference storageReference;
+    FirebaseStorage storage1,storage2;
+    StorageReference storageReferenceCity,storageReferenceMall ;
     private int img_request_id = 10;
     private Uri imgUri;
     private int img_request_id2 = 20;
@@ -81,8 +81,10 @@ public class cities extends AppCompatActivity {
 
         imageView=(ImageView) findViewById(R.id.imageView);
         imageView2=(ImageView) findViewById(R.id.imageView2);
-        storage=FirebaseStorage.getInstance();
-        storageReference=storage.getReference();
+        storage1=FirebaseStorage.getInstance();
+        storage2=FirebaseStorage.getInstance();
+        storageReferenceCity=storage1.getReference().child("City/");
+        storageReferenceMall=storage2.getReference().child("Mall/");
        // imageView.set;
 
         imageView.setOnClickListener(new View.OnClickListener() {
@@ -173,7 +175,8 @@ public class cities extends AppCompatActivity {
             final ProgressDialog progressDialog = new ProgressDialog(this);
             progressDialog.setTitle("please waite...");
             progressDialog.show();
-            StorageReference reference = storageReference.child(temall.getText().toString()/*+ UUID.randomUUID().toString()*/);
+            StorageReference reference = storageReferenceMall.child(temall.getText().toString()/*+ UUID.randomUUID().toString()*/);
+           // reference.child("City/");
             reference.putFile(imgUri2).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
@@ -213,7 +216,8 @@ public class cities extends AppCompatActivity {
             final ProgressDialog progressDialog = new ProgressDialog(this);
             progressDialog.setTitle("please waite...");
             progressDialog.show();
-            StorageReference reference = storageReference.child(tecity.getText().toString()/*+ UUID.randomUUID().toString()*/);
+            StorageReference reference = storageReferenceCity.child(tecity.getText().toString()/*+ UUID.randomUUID().toString()*/);
+
             reference.putFile(imgUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {

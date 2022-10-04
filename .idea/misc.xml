@@ -5,6 +5,7 @@
       <map>
         <entry key="..\:/Users/mohannad alafeef/AndroidStudioProjects/Zonepark/app/src/main/res/layout/item.xml" value="0.1703125" />
         <entry key="..\:/Users/user/AndroidStudioProjects/MyApplication2/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1255" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/MyApplication2/app/src/main/res/drawable/border.xml" value="0.153" />
         <entry key="..\:/Users/user/AndroidStudioProjects/MyApplication2/app/src/main/res/drawable/button_shape.xml" value="0.1" />
         <entry key="..\:/Users/user/AndroidStudioProjects/MyApplication2/app/src/main/res/drawable/car_custom.xml" value="0.16" />
         <entry key="..\:/Users/user/AndroidStudioProjects/MyApplication2/app/src/main/res/drawable/custom_city.xml" value="0.1" />
@@ -31,6 +32,7 @@
         <entry key="..\:/Users/user/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/activity_cities.xml" value="0.33" />
         <entry key="..\:/Users/user/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/activity_delete.xml" value="0.25" />
         <entry key="..\:/Users/user/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/activity_mall_page.xml" value="0.16802536231884058" />
         <entry key="..\:/Users/user/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/activity_register.xml" value="0.25" />
         <entry key="..\:/Users/user/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/activity_start_user.xml" value="0.25" />
         <entry key="..\:/Users/user/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/activity_user_main.xml" value="0.33" />
