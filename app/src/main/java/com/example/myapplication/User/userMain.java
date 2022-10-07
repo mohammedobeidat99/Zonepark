@@ -1,5 +1,6 @@
 package com.example.myapplication.User;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -37,7 +38,12 @@ public class userMain extends AppCompatActivity  {
         database = FirebaseDatabase.getInstance().getReference().child("mallinfo");
 
         list = new ArrayList<>();
-        myAdapter = new MyAdapter(this, list);
+        myAdapter = new MyAdapter(this, list, new MyAdapter.Itemclicklistener() {
+            @Override
+            public void onitemclick(City details) {
+                sendcity(details.getName());
+            }
+        });
         recyclerView.setAdapter(myAdapter);
         firebaseStorage = FirebaseStorage.getInstance().getReference().child("City/");
         firebaseStorage.listAll().addOnCompleteListener(task -> {
@@ -78,6 +84,13 @@ public class userMain extends AppCompatActivity  {
             }
         });*/
 
+    }
+
+    public void sendcity(String message){
+        //Toast.makeText(this,message,Toast.LENGTH_SHORT).show();
+        Intent intent=new Intent(userMain.this, Mall_page.class);
+        intent.putExtra("the city is ",message);
+        startActivity(intent);
     }
 
 

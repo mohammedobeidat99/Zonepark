@@ -17,13 +17,19 @@ import com.example.myapplication.R;
 import java.util.ArrayList;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
-        Context context;
-        ArrayList<City> cityArrayList;
-    private int image;
+    Context context;
+    ArrayList<City> cityArrayList;
 
-    public MyAdapter(Context context, ArrayList<City> cityArrayList) {
+
+    private int image;
+    private Itemclicklistener mItemlistener;
+
+    public MyAdapter(Context context, ArrayList<City> cityArrayList, Itemclicklistener itemclicklistener) {
         this.context = context;
         this.cityArrayList = cityArrayList;
+        //new
+
+        this.mItemlistener=itemclicklistener;
     }
 
     @NonNull
@@ -38,10 +44,25 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     public void onBindViewHolder(@NonNull MyAdapter.MyViewHolder holder, int position) {
 
         City city= cityArrayList.get(position);
+
         Log.e("--TAG", "onBindViewHolder: " + city.getName() );
         Log.e("--TAG", "onBindViewHolder: " + city.getImageUrl() );
         holder.name.setText(city.getName());
         Glide.with(holder.image.getContext()).load(cityArrayList.get(position).getImageUrl()).into(holder.image);
+
+
+        //new mall
+
+
+
+
+
+
+
+        holder.itemView.setOnClickListener(view -> {
+            mItemlistener.onitemclick(cityArrayList.get(position));
+        });
+
 
 
     }
@@ -50,15 +71,20 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     public int getItemCount() {
         return cityArrayList.size();
     }
+
+    public interface Itemclicklistener{
+        void onitemclick(City details);
+    }
+
     public static class MyViewHolder extends  RecyclerView.ViewHolder{
 
         TextView name;
-      ImageView image;
+        ImageView image;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             name=itemView.findViewById(R.id.tvname);
-           image=itemView.findViewById(R.id.imageitem);
+            image=itemView.findViewById(R.id.image1);
         }
     }
 
