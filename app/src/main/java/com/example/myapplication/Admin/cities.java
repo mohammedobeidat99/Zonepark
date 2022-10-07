@@ -78,14 +78,15 @@ public class cities extends AppCompatActivity {
         sp = new parkingspace();
         ArrayList<parkingspace> mylist = new ArrayList<parkingspace>();
 
+        String image_mall_name=temall.getText().toString();//Amman
 
         imageView=(ImageView) findViewById(R.id.imageView);
         imageView2=(ImageView) findViewById(R.id.imageView2);
         storage1=FirebaseStorage.getInstance();
         storage2=FirebaseStorage.getInstance();
         storageReferenceCity=storage1.getReference().child("City/");
-        storageReferenceMall=storage2.getReference().child("Mall/");
-       // imageView.set;
+        //storageReferenceMall=storage2.getReference().child("City/").child("\""+image_mall_name+"/"+"\"");
+        storageReferenceMall=storage2.getReference().child("City/").child(image_mall_name);
 
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override

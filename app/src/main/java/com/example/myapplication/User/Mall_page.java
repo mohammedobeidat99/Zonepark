@@ -58,7 +58,7 @@ public class Mall_page extends AppCompatActivity {
 
 
         recyclerView.setAdapter(myAdapter2);
-        firebaseStorage = FirebaseStorage.getInstance().getReference().child("Mall/");
+        firebaseStorage = FirebaseStorage.getInstance().getReference().child("City/").child(cityname);
         firebaseStorage.listAll().addOnCompleteListener(task -> {
             List<StorageReference> tasks = task.getResult().getItems();
             for (int i = 0; i < tasks.size(); i++) {
