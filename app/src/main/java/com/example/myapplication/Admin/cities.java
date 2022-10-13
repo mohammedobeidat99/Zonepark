@@ -30,6 +30,7 @@ import com.google.firebase.storage.UploadTask;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 
 public class cities extends AppCompatActivity {
@@ -97,11 +98,6 @@ public class cities extends AppCompatActivity {
 */
 
 
-        num=(EditText) findViewById(R.id.num);
-
-
-
-
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -134,20 +130,12 @@ public class cities extends AppCompatActivity {
                // mallinfo1.setSpace(sp);
 
 
-                String in= (tecity.getText().toString());
+                String in= (tecity.getText().toString().toUpperCase(Locale.ROOT));
                 //  Integer.parseInt(in);
                 // String [] number={"1","2","3"};
 
 
-                if ( in.equals("Amman")) {
-                    storageReferenceMall = storage2.getReference().child("City/").child("Amman/");
-                } else if (in.equals("Irbid")) {
-                    storageReferenceMall = storage2.getReference().child("City/").child("Irbid/");
-                } else if (in.equals("Ramtha")) {
-                    storageReferenceMall = storage2.getReference().child("City/").child("Ramtha/");
-                } else {
-                    Toast.makeText(cities.this, "plise enter city", Toast.LENGTH_SHORT).show();
-                }
+
 
 
               /*  String in= (num.getText().toString());
@@ -189,6 +177,7 @@ public class cities extends AppCompatActivity {
                         temall.requestFocus();
                         return;
                     }
+                    //error***************************
                     if (parknum.isEmpty()) {
                         teparksnumber.setError("Parknum is Empty");
                         teparksnumber.requestFocus();
@@ -197,11 +186,24 @@ public class cities extends AppCompatActivity {
                     }
 
                     else {
-                        reff.child(tecity.getText().toString()).child(temall.getText().toString()).push().setValue(mallinfo1);
-                        reff.child(tecity.getText().toString()).child(temall.getText().toString()).child("space").setValue(mylist);
-                        Toast.makeText(cities.this, "Successful Insert", Toast.LENGTH_SHORT).show();
-                        saveInFirebase();
-                        saveInFirebase2();
+
+
+                        if ( in.equals("AMMAN")) {
+                            storageReferenceMall = storage2.getReference().child("City/").child("Amman/");
+                            upload();
+
+                        } else if (in.equals("IRBID")) {
+                            storageReferenceMall = storage2.getReference().child("City/").child("Irbid/");
+                            upload();
+                        } else if (in.equals("RAMTHA")) {
+                            storageReferenceMall = storage2.getReference().child("City/").child("Ramtha/");
+                            upload();
+                        } else {
+                            Toast.makeText(cities.this, "plise enter city", Toast.LENGTH_SHORT).show();
+                        }
+
+
+
                     }
 
 
@@ -258,6 +260,15 @@ public class cities extends AppCompatActivity {
 
     ////////////////////////////////////////
     //insert city photo
+
+    private  void upload(){
+
+        saveInFirebase2();
+        saveInFirebase();
+        reff.child(tecity.getText().toString()).child(temall.getText().toString()).push().setValue(mallinfo1);
+        reff.child(tecity.getText().toString()).child(temall.getText().toString()).child("space").setValue(mylist);
+        Toast.makeText(cities.this, "Successful Insert", Toast.LENGTH_SHORT).show();
+    }
 
     private void saveInFirebase() {
         if(imgUri != null){

@@ -192,16 +192,5 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:drawable/ic_menu_crop" />
 
-    <EditText
-        android:id="@+id/num"
-        android:layout_width="96dp"
-        android:layout_height="37dp"
-        android:layout_marginStart="61dp"
-        android:layout_marginTop="145dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
