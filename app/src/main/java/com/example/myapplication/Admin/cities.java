@@ -130,7 +130,6 @@ public class cities extends AppCompatActivity {
                // mallinfo1.setSpace(sp);
 
 
-                String in= (tecity.getText().toString().toUpperCase(Locale.ROOT));
                 //  Integer.parseInt(in);
                 // String [] number={"1","2","3"};
 
@@ -186,16 +185,17 @@ public class cities extends AppCompatActivity {
                     }
 
                     else {
+                        String in= (tecity.getText().toString().toUpperCase(Locale.ROOT));
 
 
-                        if ( in.equals("AMMAN")) {
+                        if ( in.equalsIgnoreCase("AMMAN")) {
                             storageReferenceMall = storage2.getReference().child("City/").child("Amman/");
                             upload();
 
-                        } else if (in.equals("IRBID")) {
+                        } else if (in.equalsIgnoreCase("IRBID")) {
                             storageReferenceMall = storage2.getReference().child("City/").child("Irbid/");
                             upload();
-                        } else if (in.equals("RAMTHA")) {
+                        } else if (in.equalsIgnoreCase("RAMTHA")) {
                             storageReferenceMall = storage2.getReference().child("City/").child("Ramtha/");
                             upload();
                         } else {

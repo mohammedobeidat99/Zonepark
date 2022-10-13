@@ -39,6 +39,7 @@
         android:layout_height="37dp"
         android:layout_marginHorizontal="20dp"
 
+
         android:layout_marginStart="40dp"
         android:layout_marginTop="200dp"
         android:background="@drawable/custom_input"
@@ -46,11 +47,13 @@
         android:drawablePadding="10dp"
         android:ems="10"
         android:hint=" Enter City Name "
-        android:inputType="textPersonName"
+        android:inputType="textCapWords"
+
         android:minHeight="48dp"
         android:paddingStart="12dp"
         android:paddingEnd="12dp"
         android:textAlignment="viewStart"
+        android:textAllCaps="true"
         android:textColor="#143D59"
         android:textColorHint="#143d59"
         android:textSize="16sp"
@@ -90,8 +93,8 @@
         android:drawableStart="@drawable/custom_shop"
         android:drawablePadding="10dp"
         android:ems="10"
+        android:inputType="textCapWords"
         android:hint=" Enter Mall Name "
-        android:inputType="textPersonName"
         android:minHeight="48dp"
         android:paddingStart="12dp"
         android:paddingEnd="12dp"
