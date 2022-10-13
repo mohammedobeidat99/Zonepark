@@ -88,28 +88,19 @@ public class cities extends AppCompatActivity {
         storage1=FirebaseStorage.getInstance();
         storage2=FirebaseStorage.getInstance();
         storageReferenceCity=storage1.getReference().child("City/");
-        //storageReferenceMall=storage2.getReference().child("City/").child("\""+image_mall_name+"/"+"\"");
+        //storageReferenceMall = storage2.getReference().child("City/").child("Amman/");
+
+
+
+/*
+
+*/
+
+
         num=(EditText) findViewById(R.id.num);
 
 
-        String in= (tecity.getText().toString());
 
-
-
-        String [] number={"1","2","3"};
-
-
-        if (in=="1") {
-            storageReferenceMall = storage2.getReference().child("City/").child("Amman/");
-        } else if (number[1]==in) {
-            storageReferenceMall = storage2.getReference().child("City/").child("Irbid/");
-        } else if (number[2]==in) {
-            storageReferenceMall = storage2.getReference().child("City/").child("Ramtha/");
-        } else {
-            Toast.makeText(cities.this, "plise enter city", Toast.LENGTH_SHORT).show();
-        }
-
-       // storageReferenceMall=storage2.getReference().child("City/").child("Amman/");
 
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -132,6 +123,7 @@ public class cities extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+
                 int spacenumber= Integer.parseInt(teparksnumber.getText().toString().trim());
                 mallinfo1.setCity(tecity.getText().toString().trim());
                 mallinfo1.setMall(temall.getText().toString().trim());
@@ -141,6 +133,37 @@ public class cities extends AppCompatActivity {
                // sp.setId(teparksnumber.getText().toString());
                // mallinfo1.setSpace(sp);
 
+
+                String in= (tecity.getText().toString());
+                //  Integer.parseInt(in);
+                // String [] number={"1","2","3"};
+
+
+                if ( in.equals("Amman")) {
+                    storageReferenceMall = storage2.getReference().child("City/").child("Amman/");
+                } else if (in.equals("Irbid")) {
+                    storageReferenceMall = storage2.getReference().child("City/").child("Irbid/");
+                } else if (in.equals("Ramtha")) {
+                    storageReferenceMall = storage2.getReference().child("City/").child("Ramtha/");
+                } else {
+                    Toast.makeText(cities.this, "plise enter city", Toast.LENGTH_SHORT).show();
+                }
+
+
+              /*  String in= (num.getText().toString());
+                int x = 0;
+               x=  Integer.parseInt(in);
+
+                switch (x)
+                {
+
+                    case 1: storageReferenceMall = storage2.getReference().child("City/").child("Amman/");break;
+                    case 2: storageReferenceMall = storage2.getReference().child("City/").child("Irbid/");break;
+                    case 3: storageReferenceMall = storage2.getReference().child("City/").child("Ramtha/");break;
+
+
+                }
+*/
                 for(int i=0 ; i<spacenumber; i++ ){
                     sp=new parkingspace();
                     mylist.add(sp);

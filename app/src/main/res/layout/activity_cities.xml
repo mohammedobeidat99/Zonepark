@@ -194,13 +194,12 @@
 
     <EditText
         android:id="@+id/num"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="96dp"
+        android:layout_height="37dp"
         android:layout_marginStart="61dp"
         android:layout_marginTop="145dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="num city"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
