@@ -38,7 +38,7 @@ public class cities extends AppCompatActivity {
     //private DatabaseReference reference;
     //private String userID;
     List<String> mylist;
-    EditText tecity,temall,teparksnumber;
+    EditText tecity,temall,teparksnumber,num;
     Button btnsave ;
     DatabaseReference reff;
     mallinfo mallinfo1;
@@ -77,8 +77,11 @@ public class cities extends AppCompatActivity {
         mallinfo1 = new mallinfo();
         sp = new parkingspace();
         ArrayList<parkingspace> mylist = new ArrayList<parkingspace>();
+       // String A="Amman/",I="Irbed/",C="Ramtha/";
 
-        String image_mall_name=temall.getText().toString();//Amman
+
+
+
 
         imageView=(ImageView) findViewById(R.id.imageView);
         imageView2=(ImageView) findViewById(R.id.imageView2);
@@ -86,7 +89,27 @@ public class cities extends AppCompatActivity {
         storage2=FirebaseStorage.getInstance();
         storageReferenceCity=storage1.getReference().child("City/");
         //storageReferenceMall=storage2.getReference().child("City/").child("\""+image_mall_name+"/"+"\"");
-        storageReferenceMall=storage2.getReference().child("City/").child(image_mall_name);
+        num=(EditText) findViewById(R.id.num);
+
+
+        String in= (tecity.getText().toString());
+
+
+
+        String [] number={"1","2","3"};
+
+
+        if (in=="1") {
+            storageReferenceMall = storage2.getReference().child("City/").child("Amman/");
+        } else if (number[1]==in) {
+            storageReferenceMall = storage2.getReference().child("City/").child("Irbid/");
+        } else if (number[2]==in) {
+            storageReferenceMall = storage2.getReference().child("City/").child("Ramtha/");
+        } else {
+            Toast.makeText(cities.this, "plise enter city", Toast.LENGTH_SHORT).show();
+        }
+
+       // storageReferenceMall=storage2.getReference().child("City/").child("Amman/");
 
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -130,6 +153,7 @@ public class cities extends AppCompatActivity {
                     String Mall =temall.getText().toString().trim();
                     String parknum =teparksnumber.getText().toString().trim();
                     //int park=Integer.parseInt(parknum);
+
 
                     if (City.isEmpty()) {
                         tecity.setError("City is Empty");
