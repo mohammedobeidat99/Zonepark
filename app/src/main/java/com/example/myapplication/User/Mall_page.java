@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import com.example.myapplication.R;
 import com.google.firebase.database.DatabaseReference;
@@ -55,6 +56,7 @@ public class Mall_page extends AppCompatActivity {
 
         list1 = new ArrayList<>();
         myAdapter2 = new MyAdapter2(this,list1);
+        recyclerView.setLayoutManager(new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL));
 
 
         recyclerView.setAdapter(myAdapter2);

@@ -93,10 +93,6 @@ public class cities extends AppCompatActivity {
 
 
 
-/*
-
-*/
-
 
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -124,18 +120,14 @@ public class cities extends AppCompatActivity {
                 mallinfo1.setCity(tecity.getText().toString().trim());
                 mallinfo1.setMall(temall.getText().toString().trim());
                 mallinfo1.setParksnumber(teparksnumber.getText().toString().trim());
-                // mallinfo1.setParksnumber(Parksnumber);
 
+                // mallinfo1.setParksnumber(Parksnumber);
                // sp.setId(teparksnumber.getText().toString());
                // mallinfo1.setSpace(sp);
 
 
                 //  Integer.parseInt(in);
                 // String [] number={"1","2","3"};
-
-
-
-
 
               /*  String in= (num.getText().toString());
                 int x = 0;
@@ -187,28 +179,49 @@ public class cities extends AppCompatActivity {
                     else {
                         String in= (tecity.getText().toString().toUpperCase(Locale.ROOT));
 
-
                         if ( in.equalsIgnoreCase("AMMAN")) {
-                            storageReferenceMall = storage2.getReference().child("City/").child("Amman/");
+                            storageReferenceMall = storage2.getReference().child("City/").child("Amman/");//1
                             upload();
-
                         } else if (in.equalsIgnoreCase("IRBID")) {
-                            storageReferenceMall = storage2.getReference().child("City/").child("Irbid/");
+                            storageReferenceMall = storage2.getReference().child("City/").child("Irbid/");//2
                             upload();
-                        } else if (in.equalsIgnoreCase("RAMTHA")) {
-                            storageReferenceMall = storage2.getReference().child("City/").child("Ramtha/");
+                        } else if (in.equalsIgnoreCase("BALQA")) {
+                            storageReferenceMall = storage2.getReference().child("City/").child("Balqa/");//4
                             upload();
-                        } else {
-                            Toast.makeText(cities.this, "plise enter city", Toast.LENGTH_SHORT).show();
+                        }else if (in.equalsIgnoreCase("JARASH")) {
+                            storageReferenceMall = storage2.getReference().child("City/").child("Jarash/");//5
+                            upload();
+                        }else if (in.equalsIgnoreCase("ZARQA")) {
+                            storageReferenceMall = storage2.getReference().child("City/").child("Zarqa/");//6
+                            upload();
+                        }else if (in.equalsIgnoreCase("TAFILA" )) {
+                            storageReferenceMall = storage2.getReference().child("City/").child("Tafila/");//7
+                            upload();
+                        }else if (in.equalsIgnoreCase("AQABA")) {
+                            storageReferenceMall = storage2.getReference().child("City/").child("Aqaba/");//8
+                            upload();
+                        }else if (in.equalsIgnoreCase("AJLOUN")) {
+                            storageReferenceMall = storage2.getReference().child("City/").child("Ajloun/");//9
+                            upload();
+                        }else if (in.equalsIgnoreCase("KARAK")) {
+                            storageReferenceMall = storage2.getReference().child("City/").child("Karak/");//10
+                            upload();
+                        }else if (in.equalsIgnoreCase("MADABA")) {
+                            storageReferenceMall = storage2.getReference().child("City/").child("Madaba/");//11
+                            upload();
+                        }else if (in.equalsIgnoreCase("MAEAN")) {
+                            storageReferenceMall = storage2.getReference().child("City/").child("Maean/");//12
+                            upload();
+                        }else if (in.equalsIgnoreCase("MAFRAQ")) {
+                            storageReferenceMall = storage2.getReference().child("City/").child("Mafraq/");
+                            upload();
+                        }
+                        else {
+                            Toast.makeText(cities.this, "Please enter a valid city", Toast.LENGTH_SHORT).show();
                         }
 
-
-
                     }
-
-
-                }
-
+            }
         });
         Delete.setOnClickListener(new View.OnClickListener() {
             @Override
