@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -29,6 +30,7 @@ public class Mall_page extends AppCompatActivity {
     MyAdapter2 myAdapter2;
     DatabaseReference database;
     StorageReference firebaseStorage;
+    AlertDialog.Builder Alert;
 
 
     @Override

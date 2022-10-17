@@ -78,13 +78,15 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     public static class MyViewHolder extends  RecyclerView.ViewHolder{
 
-        TextView name;
+        TextView name ,tvonline;
         ImageView image;
+
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             name=itemView.findViewById(R.id.tvname);
             image=itemView.findViewById(R.id.image1);
+            //tvonline=itemView.findViewById(R.id.tvonline);
         }
     }
 

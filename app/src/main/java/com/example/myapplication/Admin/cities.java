@@ -1,20 +1,25 @@
 package com.example.myapplication.Admin;
 
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.myapplication.R;
@@ -30,10 +35,9 @@ import com.google.firebase.storage.UploadTask;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 
 
-public class cities extends AppCompatActivity {
+public class cities extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     ///data from database
     //private FirebaseUser user;
     //private DatabaseReference reference;
@@ -46,6 +50,8 @@ public class cities extends AppCompatActivity {
     parkingspace sp;
     TextView Delete;
     EditText tenumber;
+    AlertDialog.Builder Alert;
+
 
     //image view city&mall
     Button insertcityphoto,insertmallphoto;
@@ -58,7 +64,19 @@ public class cities extends AppCompatActivity {
     private Uri imgUri2;
 
 
+    Spinner spinner;
 
+    String chosen_spinner;
+    @Override
+    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+        chosen_spinner=adapterView.getItemAtPosition(i).toString();
+        //Toast.makeText(adapterView.getContext(),chosen_spinner,Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
+
+    }
 
 
 
@@ -79,6 +97,11 @@ public class cities extends AppCompatActivity {
         sp = new parkingspace();
         ArrayList<parkingspace> mylist = new ArrayList<parkingspace>();
        // String A="Amman/",I="Irbed/",C="Ramtha/";
+        spinner=(Spinner) findViewById(R.id.spinner);
+        ArrayAdapter<CharSequence> adapter=ArrayAdapter.createFromResource(this,R.array.city, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_list_item_checked);
+        spinner.setAdapter(adapter);
+        spinner.setOnItemSelectedListener(this);
 
 
 
@@ -117,7 +140,7 @@ public class cities extends AppCompatActivity {
 
 
                 int spacenumber= Integer.parseInt(teparksnumber.getText().toString().trim());
-                mallinfo1.setCity(tecity.getText().toString().trim());
+                mallinfo1.setCity(chosen_spinner.trim());
                 mallinfo1.setMall(temall.getText().toString().trim());
                 mallinfo1.setParksnumber(teparksnumber.getText().toString().trim());
 
@@ -151,17 +174,17 @@ public class cities extends AppCompatActivity {
                 }
 
 
-                    String City =tecity.getText().toString().trim();
+                    String City =chosen_spinner;
                     String Mall =temall.getText().toString().trim();
                     String parknum =teparksnumber.getText().toString().trim();
                     //int park=Integer.parseInt(parknum);
 
 
-                    if (City.isEmpty()) {
+                   /* if (City.isEmpty()) {
                         tecity.setError("City is Empty");
                         tecity.requestFocus();
                         return;
-                    }
+                    }*/
 
                     if (Mall.isEmpty()) {
                         temall.setError("Mall is Empty");
@@ -177,42 +200,42 @@ public class cities extends AppCompatActivity {
                     }
 
                     else {
-                        String in= (tecity.getText().toString().toUpperCase(Locale.ROOT));
-
-                        if ( in.equalsIgnoreCase("AMMAN")) {
+                        if ( chosen_spinner.equalsIgnoreCase("AMMAN")) {
                             storageReferenceMall = storage2.getReference().child("City/").child("Amman/");//1
-                            upload();
-                        } else if (in.equalsIgnoreCase("IRBID")) {
+                            Alart();
+
+
+                        } else if (chosen_spinner.equalsIgnoreCase("IRBID")) {
                             storageReferenceMall = storage2.getReference().child("City/").child("Irbid/");//2
                             upload();
-                        } else if (in.equalsIgnoreCase("BALQA")) {
+                        } else if (chosen_spinner.equalsIgnoreCase("BALQA")) {
                             storageReferenceMall = storage2.getReference().child("City/").child("Balqa/");//4
                             upload();
-                        }else if (in.equalsIgnoreCase("JARASH")) {
+                        }else if (chosen_spinner.equalsIgnoreCase("JARASH")) {
                             storageReferenceMall = storage2.getReference().child("City/").child("Jarash/");//5
                             upload();
-                        }else if (in.equalsIgnoreCase("ZARQA")) {
+                        }else if (chosen_spinner.equalsIgnoreCase("ZARQA")) {
                             storageReferenceMall = storage2.getReference().child("City/").child("Zarqa/");//6
                             upload();
-                        }else if (in.equalsIgnoreCase("TAFILA" )) {
+                        }else if (chosen_spinner.equalsIgnoreCase("TAFILA") ) {
                             storageReferenceMall = storage2.getReference().child("City/").child("Tafila/");//7
                             upload();
-                        }else if (in.equalsIgnoreCase("AQABA")) {
+                        }else if (chosen_spinner.equalsIgnoreCase("AQABA")) {
                             storageReferenceMall = storage2.getReference().child("City/").child("Aqaba/");//8
                             upload();
-                        }else if (in.equalsIgnoreCase("AJLOUN")) {
+                        }else if (chosen_spinner.equalsIgnoreCase("AJLOUN")) {
                             storageReferenceMall = storage2.getReference().child("City/").child("Ajloun/");//9
                             upload();
-                        }else if (in.equalsIgnoreCase("KARAK")) {
+                        }else if (chosen_spinner.equalsIgnoreCase("KARAK")) {
                             storageReferenceMall = storage2.getReference().child("City/").child("Karak/");//10
                             upload();
-                        }else if (in.equalsIgnoreCase("MADABA")) {
+                        }else if (chosen_spinner.equalsIgnoreCase("MADABA")) {
                             storageReferenceMall = storage2.getReference().child("City/").child("Madaba/");//11
                             upload();
-                        }else if (in.equalsIgnoreCase("MAEAN")) {
+                        }else if (chosen_spinner.equalsIgnoreCase("MADABA")) {
                             storageReferenceMall = storage2.getReference().child("City/").child("Maean/");//12
                             upload();
-                        }else if (in.equalsIgnoreCase("MAFRAQ")) {
+                        }else if (chosen_spinner.equalsIgnoreCase("MAFRAQ")) {
                             storageReferenceMall = storage2.getReference().child("City/").child("Mafraq/");
                             upload();
                         }
@@ -273,13 +296,35 @@ public class cities extends AppCompatActivity {
 
     ////////////////////////////////////////
     //insert city photo
+    private void Alart(){
+
+        Alert=new AlertDialog.Builder(cities.this);
+        Alert.setTitle("Welcome Admin ");
+        Alert.setMessage("Are you sure to add "+temall.getText().toString()+" in the city "+chosen_spinner);
+        Alert.setCancelable(true);
+
+        Alert.setPositiveButton("yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                upload();
+            }
+        });
+        Alert.setNegativeButton("no", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.cancel();
+            }
+        });
+        AlertDialog dialog=Alert.create();
+        dialog.show();
+    }
 
     private  void upload(){
 
         saveInFirebase2();
         saveInFirebase();
-        reff.child(tecity.getText().toString()).child(temall.getText().toString()).push().setValue(mallinfo1);
-        reff.child(tecity.getText().toString()).child(temall.getText().toString()).child("space").setValue(mylist);
+        reff.child(chosen_spinner).child(temall.getText().toString()).push().setValue(mallinfo1);
+        reff.child(chosen_spinner).child(temall.getText().toString()).child("space").setValue(mylist);
         Toast.makeText(cities.this, "Successful Insert", Toast.LENGTH_SHORT).show();
     }
 
@@ -288,7 +333,7 @@ public class cities extends AppCompatActivity {
             final ProgressDialog progressDialog = new ProgressDialog(this);
             progressDialog.setTitle("please waite...");
             progressDialog.show();
-            StorageReference reference = storageReferenceCity.child(tecity.getText().toString()/*+ UUID.randomUUID().toString()*/);
+            StorageReference reference = storageReferenceCity.child(chosen_spinner/*+ UUID.randomUUID().toString()*/);
 
             reference.putFile(imgUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override

@@ -34,33 +34,6 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/City_Delete"
-        android:layout_width="305dp"
-        android:layout_height="37dp"
-        android:layout_marginHorizontal="20dp"
-
-
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="200dp"
-        android:background="@drawable/custom_input"
-        android:drawableStart="@drawable/custom_city"
-        android:drawablePadding="10dp"
-        android:ems="10"
-        android:hint=" Enter City Name "
-        android:inputType="textCapWords"
-
-        android:minHeight="48dp"
-        android:paddingStart="12dp"
-        android:paddingEnd="12dp"
-        android:textAlignment="viewStart"
-        android:textAllCaps="true"
-        android:textColor="#143D59"
-        android:textColorHint="#143d59"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
         android:id="@+id/teparksnumber"
         android:layout_width="305dp"
         android:layout_height="37dp"
@@ -93,8 +66,8 @@
         android:drawableStart="@drawable/custom_shop"
         android:drawablePadding="10dp"
         android:ems="10"
-        android:inputType="textCapWords"
         android:hint=" Enter Mall Name "
+        android:inputType="textCapWords"
         android:minHeight="48dp"
         android:paddingStart="12dp"
         android:paddingEnd="12dp"
@@ -194,6 +167,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:drawable/ic_menu_crop" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="305dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="159dp"
+        android:background="@drawable/custom_input"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
