@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="required">Required</string>
+    <string name="name">First Name</string>
+    <string-array name="city">
+        <item>AMMAN</item>
+        <item>IRBID</item>
+        <item>BALQA</item>
+        <item>JARASH</item>
+        <item>ZARQA</item>
+        <item>TAFILA</item>
+        <item>AQABA</item>
+        <item>AJLOUN</item>
+        <item>KARAK</item>
+        <item>MADABA</item>
+        <item>MAEAN</item>
+        <item>MAFRAQ</item>
+
+    </string-array>
+
+
+
+
+</resources>
