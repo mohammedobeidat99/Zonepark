@@ -29,6 +29,7 @@
         <entry key="..\:/Users/user/AndroidStudioProjects/MyApplication2/app/src/main/res/drawable/mall_custom_01_02.xml" value="0.172" />
         <entry key="..\:/Users/user/AndroidStudioProjects/MyApplication2/app/src/main/res/drawable/npark2.xml" value="0.1655" />
         <entry key="..\:/Users/user/AndroidStudioProjects/MyApplication2/app/src/main/res/drawable/ocation_city_focas.xml" value="0.1" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/MyApplication2/app/src/main/res/drawable/style_spinner.xml" value="0.165" />
         <entry key="..\:/Users/user/AndroidStudioProjects/MyApplication2/app/src/main/res/font/abril_fatface.xml" value="0.23020833333333332" />
         <entry key="..\:/Users/user/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/activity_cities.xml" value="0.33" />
         <entry key="..\:/Users/user/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/activity_delete.xml" value="0.25" />
@@ -40,6 +41,7 @@
         <entry key="..\:/Users/user/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/item.xml" value="0.25" />
         <entry key="..\:/Users/user/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/item2.xml" value="0.5" />
         <entry key="..\:/Users/user/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/layout_admin.xml" value="0.12817028985507245" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/list_item.xml" value="0.13043478260869565" />
         <entry key="..\:/Users/user/AndroidStudioProjects/MyApplication2/app/src/main/res/mipmap-anydpi-v26/ic_launcher_zone_round.xml" value="0.174" />
       </map>
     </option>
