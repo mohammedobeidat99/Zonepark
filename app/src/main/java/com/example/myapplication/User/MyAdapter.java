@@ -21,6 +21,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     ArrayList<City> cityArrayList;
 
 
+
     private int image;
     private Itemclicklistener mItemlistener;
 
@@ -82,12 +83,16 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         ImageView image;
 
 
+
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             name=itemView.findViewById(R.id.tvname);
             image=itemView.findViewById(R.id.image1);
             //tvonline=itemView.findViewById(R.id.tvonline);
+
+
         }
     }
+
 
 }

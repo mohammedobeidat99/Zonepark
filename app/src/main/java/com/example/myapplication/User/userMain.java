@@ -1,8 +1,10 @@
 package com.example.myapplication.User;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -25,6 +27,8 @@ public class userMain extends AppCompatActivity  {
     MyAdapter myAdapter;
     DatabaseReference database;
     StorageReference firebaseStorage;
+    ProgressDialog progressDialog;
+
 
 
 
@@ -36,6 +40,15 @@ public class userMain extends AppCompatActivity  {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         database = FirebaseDatabase.getInstance().getReference().child("mallinfo");
+
+
+
+
+        progress_Dailog();
+
+
+
+
 
         list = new ArrayList<>();
         myAdapter = new MyAdapter(this, list, new MyAdapter.Itemclicklistener() {
@@ -92,6 +105,25 @@ public class userMain extends AppCompatActivity  {
         intent.putExtra("the city is ",message);
         startActivity(intent);
     }
+    public void onBackPressed(){
+        progressDialog.dismiss();
 
+    }
+public void progress_Dailog(){
+    progressDialog =new ProgressDialog(userMain.this);
+    progressDialog.show();
+    progressDialog.setContentView(R.layout.progress_dialog);
+    progressDialog.getWindow().setBackgroundDrawableResource(
+            android.R.color.transparent
+    );
+    progressDialog.setCancelable(false);
+    Handler handler=new Handler();
+    handler.postDelayed(new Runnable() {
+        @Override
+        public void run() {
+            onBackPressed();
+        }
+    },3000);
+}
 
 }

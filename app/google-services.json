@@ -1,34 +1,33 @@
 {
   "project_info": {
-    "project_number": "159933019392",
-    "firebase_url": "https://parkzone-e62b9-default-rtdb.firebaseio.com",
-    "project_id": "parkzone-e62b9",
-    "storage_bucket": "parkzone-e62b9.appspot.com"
+    "project_number": "812570674164",
+    "project_id": "zonepark2022",
+    "storage_bucket": "zonepark2022.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:159933019392:android:0be6317d7d5b387dfbefe5",
+        "mobilesdk_app_id": "1:812570674164:android:c61e884831cc7ddd896fa1",
         "android_client_info": {
           "package_name": "com.example.myapplication"
         }
       },
       "oauth_client": [
         {
-          "client_id": "159933019392-1jvqlvu3eg69m50qjlku80fth60bosuo.apps.googleusercontent.com",
+          "client_id": "812570674164-45h5bh14sttml5poqva53ltsinv1molo.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBBIBm1AZBiyYHAbcT0fRQBEw9L-kyLlZw"
+          "current_key": "AIzaSyAH2wCJFYpZZ28H2MJRChR9wMsBHdpn-8s"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "159933019392-1jvqlvu3eg69m50qjlku80fth60bosuo.apps.googleusercontent.com",
+              "client_id": "812570674164-45h5bh14sttml5poqva53ltsinv1molo.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

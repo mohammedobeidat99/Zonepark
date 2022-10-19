@@ -39,6 +39,7 @@ public class MyAdapter2 extends RecyclerView.Adapter<MyAdapter2.MyViewHolder> {
     public MyAdapter2.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         View v= LayoutInflater.from(parent.getContext()).inflate(R.layout.item2,parent,false);
+
         return new MyViewHolder(v);
     }
 
@@ -75,6 +76,7 @@ public class MyAdapter2 extends RecyclerView.Adapter<MyAdapter2.MyViewHolder> {
 
         TextView name;
         ImageView image;
+
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);

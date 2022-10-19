@@ -1,5 +1,6 @@
 package com.example.myapplication.User;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -31,10 +32,14 @@ public class Mall_page extends AppCompatActivity {
     DatabaseReference database;
     StorageReference firebaseStorage;
     AlertDialog.Builder Alert;
+    ProgressDialog progressDialog;
+
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mall_page);
         mall=findViewById(R.id.mall);
@@ -49,7 +54,7 @@ public class Mall_page extends AppCompatActivity {
         String cityname=getIntent().getStringExtra("the city is ");
         mall.setText("Welcome to "+cityname);
 
-        //////// start
+
 
         recyclerView = findViewById(R.id.rvmall);
         recyclerView.setHasFixedSize(true);
@@ -71,9 +76,7 @@ public class Mall_page extends AppCompatActivity {
 
                     Uri imageUri = urlTask.getResult();
                     Log.e("--TAG", "onCreate: " + imageUri);
-                    //   database.child(a.getName());
                     list1.add(new Mall(reference.getName(), imageUri));
-
                     if (list1.size() == tasks.size()) myAdapter2.notifyItemRangeInserted(0,list1.size());
                 });
             }
@@ -86,4 +89,5 @@ public class Mall_page extends AppCompatActivity {
 
 
     }
+
 }
