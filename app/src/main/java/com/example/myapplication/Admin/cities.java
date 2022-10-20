@@ -97,7 +97,7 @@ public class cities extends AppCompatActivity implements AdapterView.OnItemSelec
 
         ArrayList<parkingspace> mylist = new ArrayList<parkingspace>();
         ArrayAdapter<CharSequence> adapter=ArrayAdapter.createFromResource(this,R.array.city, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_selectable_list_item);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
 
@@ -181,12 +181,12 @@ public class cities extends AppCompatActivity implements AdapterView.OnItemSelec
                         if ( chosen_spinner.equalsIgnoreCase("AMMAN")) {
                             storageReferenceMall = storage2.getReference().child("City/").child("Amman/");//1
                             Alart();
-                          //  reff.child(chosen_spinner).child(temall.getText().toString()).child("space").setValue(mylist);
+                           //reff.child(chosen_spinner).child(temall.getText().toString()).child("space").setValue(mylist);
 
                         } else if (chosen_spinner.equalsIgnoreCase("IRBID")) {
                             storageReferenceMall = storage2.getReference().child("City/").child("Irbid/");//2
                             Alart();
-                          //  reff.child(chosen_spinner).child(temall.getText().toString()).child("space").setValue(mylist);
+                          // reff.child(chosen_spinner).child(temall.getText().toString()).child("space").setValue(mylist);
 
                         } else if (chosen_spinner.equalsIgnoreCase("BALQA")) {
                             storageReferenceMall = storage2.getReference().child("City/").child("Balqa/");//4

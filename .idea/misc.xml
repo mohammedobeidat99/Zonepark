@@ -8,6 +8,8 @@
         <entry key="..\:/Users/user/AndroidStudioProjects/MyApplication2/app/src/main/res/drawable/bg_round.xml" value="0.1435" />
         <entry key="..\:/Users/user/AndroidStudioProjects/MyApplication2/app/src/main/res/drawable/border.xml" value="0.153" />
         <entry key="..\:/Users/user/AndroidStudioProjects/MyApplication2/app/src/main/res/drawable/border2.xml" value="0.168" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/MyApplication2/app/src/main/res/drawable/border_network.xml" value="0.13" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/MyApplication2/app/src/main/res/drawable/button_alarm.xml" value="0.2045" />
         <entry key="..\:/Users/user/AndroidStudioProjects/MyApplication2/app/src/main/res/drawable/button_shape.xml" value="0.1" />
         <entry key="..\:/Users/user/AndroidStudioProjects/MyApplication2/app/src/main/res/drawable/car_custom.xml" value="0.16" />
         <entry key="..\:/Users/user/AndroidStudioProjects/MyApplication2/app/src/main/res/drawable/custom_city.xml" value="0.1" />
@@ -36,6 +38,7 @@
         <entry key="..\:/Users/user/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/activity_delete.xml" value="0.25" />
         <entry key="..\:/Users/user/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/user/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/activity_mall_page.xml" value="0.25" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/activity_network.xml" value="0.13043478260869565" />
         <entry key="..\:/Users/user/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/activity_register.xml" value="0.25" />
         <entry key="..\:/Users/user/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/activity_splash.xml" value="0.2" />
         <entry key="..\:/Users/user/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/activity_start_user.xml" value="0.25" />
@@ -44,6 +47,7 @@
         <entry key="..\:/Users/user/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/item2.xml" value="0.5" />
         <entry key="..\:/Users/user/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/layout_admin.xml" value="0.12817028985507245" />
         <entry key="..\:/Users/user/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/list_item.xml" value="0.13043478260869565" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/network.xml" value="0.33" />
         <entry key="..\:/Users/user/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/progress_dialog.xml" value="0.25" />
         <entry key="..\:/Users/user/AndroidStudioProjects/MyApplication2/app/src/main/res/mipmap-anydpi-v26/ic_launcher_zone_round.xml" value="0.174" />
       </map>
