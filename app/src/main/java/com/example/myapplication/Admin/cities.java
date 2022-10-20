@@ -42,7 +42,7 @@ public class cities extends AppCompatActivity implements AdapterView.OnItemSelec
     //private FirebaseUser user;
     //private DatabaseReference reference;
     //private String userID;
-    List<String> mylist;
+   // List<String> mylist;
     EditText tecity,temall,teparksnumber,num;
     Button btnsave ;
     DatabaseReference reff;
@@ -51,6 +51,7 @@ public class cities extends AppCompatActivity implements AdapterView.OnItemSelec
     TextView Delete;
     EditText tenumber;
     AlertDialog.Builder Alert;
+    int spacenumber=0;
 
 
     //image view city&mall
@@ -145,13 +146,8 @@ public class cities extends AppCompatActivity implements AdapterView.OnItemSelec
               // sp.setId(teparksnumber.getText().toString());
                // mallinfo1.setSpace(sp);
 
-                int spacenumber= Integer.parseInt(teparksnumber.getText().toString().trim());
 
-                for(int i=0; i<spacenumber; i++ ){
-                    sp=new parkingspace();
-                    mylist.add(sp);
-                    sp.setId("park"+i);
-                }
+
 
                     //String City =chosen_spinner;
                     String Mall =temall.getText().toString().trim();
@@ -181,12 +177,10 @@ public class cities extends AppCompatActivity implements AdapterView.OnItemSelec
                         if ( chosen_spinner.equalsIgnoreCase("AMMAN")) {
                             storageReferenceMall = storage2.getReference().child("City/").child("Amman/");//1
                             Alart();
-                           //reff.child(chosen_spinner).child(temall.getText().toString()).child("space").setValue(mylist);
 
                         } else if (chosen_spinner.equalsIgnoreCase("IRBID")) {
                             storageReferenceMall = storage2.getReference().child("City/").child("Irbid/");//2
                             Alart();
-                          // reff.child(chosen_spinner).child(temall.getText().toString()).child("space").setValue(mylist);
 
                         } else if (chosen_spinner.equalsIgnoreCase("BALQA")) {
                             storageReferenceMall = storage2.getReference().child("City/").child("Balqa/");//4
@@ -315,9 +309,22 @@ public class cities extends AppCompatActivity implements AdapterView.OnItemSelec
         saveInFirebase2();
         saveInFirebase();
         reff.child(chosen_spinner).child(temall.getText().toString()).push().setValue(mallinfo1);
-       reff.child(chosen_spinner).child(temall.getText().toString()).child("space").setValue(mylist);
+        CreateSpace();
         Toast.makeText(cities.this, "Successful Insert", Toast.LENGTH_SHORT).show();
+       Clear();
+    }
+    private void CreateSpace(){
+        spacenumber= Integer.parseInt(teparksnumber.getText().toString().trim());
+        List<parkingspace> ll=new ArrayList<>();
+        for (int i=0;i<spacenumber;i++){
+            sp = new parkingspace();
+            sp.setId("park" + i);
+            ll.add(sp);
+        }
+        reff.child(chosen_spinner).child(temall.getText().toString()).child("space").setValue(ll);
+    }
 
+    private void  Clear(){
         temall.getText().clear();
         teparksnumber.getText().clear();
         imageView.setImageResource(android.R.drawable.ic_menu_crop);
