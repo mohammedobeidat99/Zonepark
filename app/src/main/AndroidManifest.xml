@@ -11,6 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
+            android:name=".Admin.cities"
+            android:exported="false" />
+        <activity
             android:name=".Admin.MainActivity"
             android:exported="false" />
         <activity
@@ -32,7 +35,7 @@
             android:name=".Admin.register"
             android:exported="false" />
         <activity
-            android:name=".Admin.cities"
+            android:name=".User.Park_space"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

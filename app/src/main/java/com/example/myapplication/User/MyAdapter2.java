@@ -22,7 +22,7 @@ public class MyAdapter2 extends RecyclerView.Adapter<MyAdapter2.MyViewHolder> {
 
 
     private int image;
-    //private Itemclicklistener mItemlistener;
+
 
     public MyAdapter2(Context context, ArrayList<Mall> mallArrayList) {
         this.context = context;

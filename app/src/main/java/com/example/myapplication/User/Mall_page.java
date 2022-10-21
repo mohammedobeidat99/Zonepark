@@ -25,7 +25,6 @@ import java.util.List;
 
 public class Mall_page extends AppCompatActivity {
     TextView mall ,back;
-
     RecyclerView recyclerView;
     ArrayList<Mall> list1;
     MyAdapter2 myAdapter2;
