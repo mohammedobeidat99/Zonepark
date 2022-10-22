@@ -22,11 +22,13 @@ public class MyAdapter2 extends RecyclerView.Adapter<MyAdapter2.MyViewHolder> {
 
 
     private int image;
+    private Itemclicklistener sItemlistener;
 
-
-    public MyAdapter2(Context context, ArrayList<Mall> mallArrayList) {
+    public MyAdapter2(Context context, ArrayList<Mall> mallArrayList, Itemclicklistener itemclicklistener) {
         this.context = context;
         this.mallArrayList = mallArrayList;
+        this.sItemlistener=itemclicklistener;
+
 
 
        // this.mItemlistener=itemclicklistener;
@@ -55,9 +57,9 @@ public class MyAdapter2 extends RecyclerView.Adapter<MyAdapter2.MyViewHolder> {
 
 
 
-       /* holder.itemView.setOnClickListener(view -> {
-            mItemlistener.onitemclick(cityArrayList.get(position));
-        });*/
+        holder.itemView.setOnClickListener(view -> {
+            sItemlistener.onitemclick(mallArrayList.get(position));
+        });
 
 
 
@@ -69,7 +71,9 @@ public class MyAdapter2 extends RecyclerView.Adapter<MyAdapter2.MyViewHolder> {
     }
 
     public interface Itemclicklistener{
-        void onitemclick(City details);
+        void onitemclick(Mall details);
+
+
     }
 
     public static class MyViewHolder extends  RecyclerView.ViewHolder{

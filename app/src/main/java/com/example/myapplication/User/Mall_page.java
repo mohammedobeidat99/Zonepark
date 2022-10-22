@@ -36,6 +36,7 @@ public class Mall_page extends AppCompatActivity {
 
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -43,6 +44,11 @@ public class Mall_page extends AppCompatActivity {
         setContentView(R.layout.activity_mall_page);
         mall=findViewById(R.id.mall);
         back=findViewById(R.id.back);
+
+
+
+
+
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -50,8 +56,11 @@ public class Mall_page extends AppCompatActivity {
 
             }
         });
+
         String cityname=getIntent().getStringExtra("the city is ");
         mall.setText("Welcome to "+cityname);
+
+
 
 
 
@@ -61,7 +70,17 @@ public class Mall_page extends AppCompatActivity {
         database = FirebaseDatabase.getInstance().getReference().child("mallinfo").child(cityname);
 
         list1 = new ArrayList<>();
-        myAdapter2 = new MyAdapter2(this,list1);
+        myAdapter2 = new MyAdapter2(this,list1 ,new MyAdapter2.Itemclicklistener() {
+            @Override
+            public void onitemclick(Mall details ) {
+                sendMALL(details.getNamemall() );
+
+            }
+
+
+
+
+        });
         recyclerView.setLayoutManager(new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL));
 
 
@@ -88,5 +107,14 @@ public class Mall_page extends AppCompatActivity {
 
 
     }
-
+    public void sendMALL(String message ){
+        //Toast.makeText(this,message,Toast.LENGTH_SHORT).show();
+        Intent intent=new Intent(Mall_page.this, Park_space.class);
+        intent.putExtra("the mall is ",message);
+        startActivity(intent);
+    }
+    /*public  void sendCity(String message2){
+        Intent intent2=new Intent();
+        intent2.putExtra("city",message2);
+    }*/
 }

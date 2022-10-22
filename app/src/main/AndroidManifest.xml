@@ -14,7 +14,7 @@
             android:name=".Admin.cities"
             android:exported="false" />
         <activity
-            android:name=".Admin.MainActivity"
+            android:name=".User.Park_space"
             android:exported="false" />
         <activity
             android:name=".User.Mall_page"
@@ -35,7 +35,7 @@
             android:name=".Admin.register"
             android:exported="false" />
         <activity
-            android:name=".User.Park_space"
+            android:name=".Admin.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -104,6 +104,7 @@ public class userMain extends AppCompatActivity  {
         Intent intent=new Intent(userMain.this, Mall_page.class);
         intent.putExtra("the city is ",message);
         startActivity(intent);
+
     }
     public void onBackPressed(){
         progressDialog.dismiss();
