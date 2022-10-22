@@ -54,8 +54,12 @@ public class userMain extends AppCompatActivity  {
         myAdapter = new MyAdapter(this, list, new MyAdapter.Itemclicklistener() {
             @Override
             public void onitemclick(City details) {
+
                 sendcity(details.getName());
+
+
             }
+
         });
         recyclerView.setAdapter(myAdapter);
         firebaseStorage = FirebaseStorage.getInstance().getReference().child("City/");
@@ -106,6 +110,9 @@ public class userMain extends AppCompatActivity  {
         startActivity(intent);
 
     }
+
+
+
     public void onBackPressed(){
         progressDialog.dismiss();
 

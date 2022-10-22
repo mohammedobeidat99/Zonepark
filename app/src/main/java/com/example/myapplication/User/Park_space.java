@@ -46,6 +46,8 @@ public class Park_space extends AppCompatActivity {
         Intent intent2 = getIntent();
         String mallname = intent2.getStringExtra("the mall is ");
         namemall.setText(mallname);
+        Intent intent1 = getIntent();
+        String cityname=intent1.getStringExtra("kay2");
 
 
         database.addValueEventListener(new ValueEventListener() {

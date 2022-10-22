@@ -74,6 +74,7 @@ public class MyAdapter2 extends RecyclerView.Adapter<MyAdapter2.MyViewHolder> {
         void onitemclick(Mall details);
 
 
+        void onitemclick(City details);
     }
 
     public static class MyViewHolder extends  RecyclerView.ViewHolder{

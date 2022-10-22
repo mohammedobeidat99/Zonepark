@@ -76,7 +76,11 @@ public class Mall_page extends AppCompatActivity {
                 sendMALL(details.getNamemall() );
 
             }
+            @Override
+            public void onitemclick(City details ) {
+                sendcity2(details.getName() );
 
+            }
 
 
 
@@ -112,6 +116,13 @@ public class Mall_page extends AppCompatActivity {
         Intent intent=new Intent(Mall_page.this, Park_space.class);
         intent.putExtra("the mall is ",message);
         startActivity(intent);
+    }
+    public void sendcity2(String message2){
+        //Toast.makeText(this,message,Toast.LENGTH_SHORT).show();
+        Intent intent=new Intent(Mall_page.this, Park_space.class);
+        intent.putExtra("kay2",message2);
+        startActivity(intent);
+
     }
     /*public  void sendCity(String message2){
         Intent intent2=new Intent();
