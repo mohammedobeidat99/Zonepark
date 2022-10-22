@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/back"
+    tools:context=".Admin.cities">
+
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="124dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="544dp"
+        android:gravity="center"
+        android:text="Select photo Mall"
+        android:textColor="#7C7D7E"
+        app:layout_constraintEnd_toEndOf="@+id/imageView2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/imageView2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="124dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="544dp"
+        android:gravity="center"
+        android:text="Select photo City"
+        android:textColor="#7C7D7E"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/teparksnumber"
+        android:layout_width="305dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="320dp"
+        android:background="@drawable/custom_input"
+        android:drawableStart="@drawable/custompark"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:hint=" Enter number of parks "
+        android:includeFontPadding="true"
+        android:inputType="number"
+        android:minHeight="48dp"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:textAlignment="viewStart"
+        android:textColor="#143D59"
+        android:textColorHint="#143d59"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/temall"
+        android:layout_width="305dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="260dp"
+        android:background="@drawable/custom_input"
+        android:drawableStart="@drawable/custom_shop"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:hint=" Enter Mall Name "
+        android:inputType="textCapWords"
+        android:minHeight="48dp"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:textAlignment="viewStart"
+        android:textColor="#143D59"
+        android:textColorHint="#143d59"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="284dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="Welcome  Admin"
+        android:textColor="#FFFFFF"
+        android:textSize="30dp"
+        android:textStyle="bold"
+
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.045" />
+
+    <Button
+        android:id="@+id/btnsave"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+
+
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="596dp"
+        android:layout_marginEnd="81dp"
+        android:background="@drawable/button_shape"
+        android:text="Insert"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="274dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="27dp"
+        android:layout_marginEnd="69dp"
+        android:gravity="center"
+        android:text="Insert the details the mall"
+        android:textColor="#7C7D7E"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/tvDelete"
+
+
+        android:layout_width="132dp"
+        android:layout_height="42dp"
+
+
+        android:layout_marginStart="139dp"
+        android:layout_marginTop="660dp"
+        android:layout_marginEnd="140dp"
+        android:drawableEnd="@drawable/delete_tv"
+        android:gravity="center"
+        android:text="Delete Mall"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="128dp"
+        android:layout_height="137dp"
+        android:layout_marginTop="404dp"
+        android:layout_marginEnd="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_crop" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="128dp"
+        android:layout_height="137dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="404dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_crop" />
+
+    <Spinner
+
+        android:id="@+id/spinner"
+        android:layout_width="305dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="159dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

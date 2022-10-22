@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "812570674164",
+    "project_id": "zonepark2022",
+    "storage_bucket": "zonepark2022.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:812570674164:android:c61e884831cc7ddd896fa1",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "812570674164-45h5bh14sttml5poqva53ltsinv1molo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAH2wCJFYpZZ28H2MJRChR9wMsBHdpn-8s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "812570674164-45h5bh14sttml5poqva53ltsinv1molo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
