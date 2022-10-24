@@ -4,12 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/park_spice_back"
     tools:context=".User.Park_space">
+
+    <TextView
+        android:id="@+id/back_to"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/back_android"
+        android:paddingStart="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewspace"
-        android:layout_width="345dp"
-        android:layout_height="582dp"
+        android:layout_width="303dp"
+        android:layout_height="612dp"
         android:layout_marginStart="1dp"
         android:layout_marginTop="1dp"
         android:layout_marginEnd="1dp"
@@ -18,16 +30,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.496" />
+        app:layout_constraintVertical_bias="0.991" />
 
     <TextView
         android:id="@+id/name_mall2"
-        android:layout_width="143dp"
-        android:layout_height="42dp"
+        android:layout_width="258dp"
+        android:layout_height="47dp"
         android:layout_marginTop="24dp"
+        android:fontFamily="@font/chilanka"
         android:gravity="center"
-        android:text="mall "
-        android:textSize="20sp"
+        android:textSize="23dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

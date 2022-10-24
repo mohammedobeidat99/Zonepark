@@ -184,34 +184,34 @@ public class cities extends AppCompatActivity implements AdapterView.OnItemSelec
 
                         } else if (chosen_spinner.equalsIgnoreCase("BALQA")) {
                             storageReferenceMall = storage2.getReference().child("City/").child("Balqa/");//4
-                            //Alart();
+                            Alart();
                         }else if (chosen_spinner.equalsIgnoreCase("JARASH")) {
                             storageReferenceMall = storage2.getReference().child("City/").child("Jarash/");//5
-                           // Alart();
+                           Alart();
                         }else if (chosen_spinner.equalsIgnoreCase("ZARQA")) {
                             storageReferenceMall = storage2.getReference().child("City/").child("Zarqa/");//6
-                           // Alart();
+                            Alart();
                         }else if (chosen_spinner.equalsIgnoreCase("TAFILA") ) {
                             storageReferenceMall = storage2.getReference().child("City/").child("Tafila/");//7
-                           // Alart();
+                            Alart();
                         }else if (chosen_spinner.equalsIgnoreCase("AQABA")) {
                             storageReferenceMall = storage2.getReference().child("City/").child("Aqaba/");//8
-                           // Alart();
+                            Alart();
                         }else if (chosen_spinner.equalsIgnoreCase("AJLOUN")) {
                             storageReferenceMall = storage2.getReference().child("City/").child("Ajloun/");//9
-                            //Alart();
+                            Alart();
                         }else if (chosen_spinner.equalsIgnoreCase("KARAK")) {
                             storageReferenceMall = storage2.getReference().child("City/").child("Karak/");//10
-                           // Alart();
+                            Alart();
                         }else if (chosen_spinner.equalsIgnoreCase("MADABA")) {
                             storageReferenceMall = storage2.getReference().child("City/").child("Madaba/");//11
-                         //   Alart();
+                            Alart();
                         }else if (chosen_spinner.equalsIgnoreCase("MAEAN")) {
                             storageReferenceMall = storage2.getReference().child("City/").child("Maean/");//12
-                           // Alart();
+                            Alart();
                         }else if (chosen_spinner.equalsIgnoreCase("MAFRAQ")) {
                             storageReferenceMall = storage2.getReference().child("City/").child("Mafraq/");
-                           // Alart();
+                            Alart();
                         }
                         else {
                             Toast.makeText(cities.this, "Please enter a valid city", Toast.LENGTH_SHORT).show();

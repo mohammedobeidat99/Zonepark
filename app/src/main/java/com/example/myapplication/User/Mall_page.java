@@ -64,24 +64,27 @@ public class Mall_page extends AppCompatActivity {
 
 
 
+
+
+
+
+
+
+
+
         recyclerView = findViewById(R.id.rvmall);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        database = FirebaseDatabase.getInstance().getReference().child("mallinfo").child(cityname);
+     database = FirebaseDatabase.getInstance().getReference().child("mallinfo").child(cityname);
 
         list1 = new ArrayList<>();
         myAdapter2 = new MyAdapter2(this,list1 ,new MyAdapter2.Itemclicklistener() {
+
+
             @Override
-            public void onitemclick(Mall details ) {
-                sendMALL(details.getNamemall() );
-
+            public void onitemclick(Mall details) {
+                sendMALL(details.getNamemall(),cityname);
             }
-            @Override
-            public void onitemclick(City details ) {
-                sendcity2(details.getName() );
-
-            }
-
 
 
         });
@@ -111,21 +114,14 @@ public class Mall_page extends AppCompatActivity {
 
 
     }
-    public void sendMALL(String message ){
+    public void sendMALL(String message ,String message2 ){
         //Toast.makeText(this,message,Toast.LENGTH_SHORT).show();
         Intent intent=new Intent(Mall_page.this, Park_space.class);
-        intent.putExtra("the mall is ",message);
+        intent.putExtra("mall",message);
+        intent.putExtra("city",message2);
         startActivity(intent);
     }
-    public void sendcity2(String message2){
-        //Toast.makeText(this,message,Toast.LENGTH_SHORT).show();
-        Intent intent=new Intent(Mall_page.this, Park_space.class);
-        intent.putExtra("kay2",message2);
-        startActivity(intent);
 
-    }
-    /*public  void sendCity(String message2){
-        Intent intent2=new Intent();
-        intent2.putExtra("city",message2);
-    }*/
+
+
 }

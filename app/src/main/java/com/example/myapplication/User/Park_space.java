@@ -2,6 +2,7 @@ package com.example.myapplication.User;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -27,7 +28,10 @@ public class Park_space extends AppCompatActivity {
     MyAdapter3 myAdapter3;
     private final DatabaseReference database= FirebaseDatabase.getInstance().getReference();
     private final List<SpacePark> myspaceList=new ArrayList<>();
-    TextView namemall;
+    TextView namemall,back2;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,26 +39,41 @@ public class Park_space extends AppCompatActivity {
 
 
 
+        back2=findViewById(R.id.back_to);
+
+        back2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Park_space.this, userMain.class));
+
+            }
+        });
         recyclerViewspace = findViewById(R.id.recyclerViewspace);
         namemall=findViewById(R.id.name_mall2);
+
         recyclerViewspace.setHasFixedSize(true);
         recyclerViewspace.setLayoutManager(new LinearLayoutManager(this));
         recyclerViewspace.setLayoutManager(new StaggeredGridLayoutManager(3,StaggeredGridLayoutManager.VERTICAL));
         lists = new ArrayList<>();
         myAdapter3 = new MyAdapter3(this,lists);
 
-        Intent intent2 = getIntent();
-        String mallname = intent2.getStringExtra("the mall is ");
-        namemall.setText(mallname);
+
         Intent intent1 = getIntent();
-        String cityname=intent1.getStringExtra("kay2");
+        String city=intent1.getStringExtra("city");
+
+        Intent intent2 = getIntent();
+        String mallname = intent2.getStringExtra("mall");
+        namemall.setText("Welcome to "+mallname);
+
+
+
 
 
         database.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 myspaceList.clear();
-                for(DataSnapshot mallinfo : snapshot.child("mallinfo").child("Amman").child(mallname).child("space").getChildren()){
+                for(DataSnapshot mallinfo : snapshot.child("mallinfo").child(city).child(mallname).child("space").getChildren()){
 
                     final String getNum= String.valueOf(String.valueOf(mallinfo.getKey()));
 

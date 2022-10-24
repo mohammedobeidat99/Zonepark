@@ -58,6 +58,7 @@ public class userMain extends AppCompatActivity  {
                 sendcity(details.getName());
 
 
+
             }
 
         });
@@ -81,25 +82,6 @@ public class userMain extends AppCompatActivity  {
         });
 
 
-      /*  database.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for (DataSnapshot dataSnapshot:snapshot.getChildren()){
-                 String  city=dataSnapshot.getKey();
-                // City image=dataSnapshot.getValue(City.class);
-                    list.add(new City(city));
-                   // list.add(image);
-
-
-                }
-                myAdapter.notifyDataSetChanged();
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });*/
 
     }
 
@@ -110,6 +92,7 @@ public class userMain extends AppCompatActivity  {
         startActivity(intent);
 
     }
+
 
 
 
