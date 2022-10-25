@@ -2,7 +2,7 @@ package com.example.myapplication.Admin;
 
 public class parkingspace   {
     private String id;
-    private boolean status=true;
+    private boolean status=false;
 
     public parkingspace() {
     }
@@ -16,7 +16,7 @@ public class parkingspace   {
         return id;
     }
 
-    public boolean isStatus() {
+    public boolean getStatus() {
         return status;
     }
 

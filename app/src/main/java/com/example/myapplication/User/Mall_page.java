@@ -89,8 +89,6 @@ public class Mall_page extends AppCompatActivity {
 
         });
         recyclerView.setLayoutManager(new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL));
-
-
         recyclerView.setAdapter(myAdapter2);
         firebaseStorage = FirebaseStorage.getInstance().getReference().child("City/").child(cityname);
         firebaseStorage.listAll().addOnCompleteListener(task -> {
@@ -107,10 +105,6 @@ public class Mall_page extends AppCompatActivity {
             }
 
         });
-
-
-
-
 
 
     }

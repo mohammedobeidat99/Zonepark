@@ -5,21 +5,27 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication.R;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class MyAdapter3 extends RecyclerView.Adapter<MyAdapter3.MyViewHolder> {
-    private  final   Context context;
-    private  final List<SpacePark> space;
 
-    public MyAdapter3(Context context, List<SpacePark> space) {
+    Context context;
+   ArrayList<SpacePark> spaceArrayList;
+
+   // private Itemclicklistener xItemlistener;
+
+
+    public MyAdapter3(Context context, ArrayList<SpacePark> spaceArrayList) {
         this.context = context;
-        this.space = space;
+        this.spaceArrayList = spaceArrayList;
+       // this.xItemlistener=xItemlistener;
     }
 
 
@@ -29,32 +35,46 @@ public class MyAdapter3 extends RecyclerView.Adapter<MyAdapter3.MyViewHolder> {
 
         View v= LayoutInflater.from(parent.getContext()).inflate(R.layout.item3,parent,false);
 
-        return new MyAdapter3.MyViewHolder(v);
+        return new MyViewHolder(v);
     }
     @Override
     public void onBindViewHolder(@NonNull MyAdapter3.MyViewHolder holder, int position) {
 
-        SpacePark spacePark= space.get(position);
+        SpacePark spacePark= spaceArrayList.get(position);
 
 
         holder.number.setText(spacePark.getId());
+        holder.status.setText(String.valueOf(spacePark.getStatus()));
 
+     /*  holder.itemView.setOnClickListener(view -> {
+           xItemlistener.onitemclick(spaceArrayList.get(position));
+        });
+*/
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(view.getContext(), ""+spacePark.getStatus(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
     @Override
     public int getItemCount() {
-        return space.size();
+        return spaceArrayList.size();
     }
 
-  /*  public interface Itemclicklistener{
-        void onitemclick(City details);
-    }
-*/
+
+
+
+
+
+
     public static class MyViewHolder extends  RecyclerView.ViewHolder{
 
-        TextView number;
+        TextView number , status;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             number=itemView.findViewById(R.id.text_space);
+            status=itemView.findViewById(R.id.avalbvle);
 
         }
     }

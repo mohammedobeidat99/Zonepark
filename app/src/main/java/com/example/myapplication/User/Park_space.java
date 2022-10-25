@@ -55,7 +55,7 @@ public class Park_space extends AppCompatActivity {
         recyclerViewspace.setLayoutManager(new LinearLayoutManager(this));
         recyclerViewspace.setLayoutManager(new StaggeredGridLayoutManager(3,StaggeredGridLayoutManager.VERTICAL));
         lists = new ArrayList<>();
-        myAdapter3 = new MyAdapter3(this,lists);
+        myAdapter3 = new MyAdapter3(this,lists );
 
 
         Intent intent1 = getIntent();
@@ -74,13 +74,18 @@ public class Park_space extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 myspaceList.clear();
                 for(DataSnapshot mallinfo : snapshot.child("mallinfo").child(city).child(mallname).child("space").getChildren()){
-
+                    //final String gets= String.valueOf(String.valueOf(mallinfo.getKey()));
                     final String getNum= String.valueOf(String.valueOf(mallinfo.getKey()));
+
 
                   SpacePark myspace=new SpacePark(getNum);
                   myspaceList.add(myspace);
             }
-                recyclerViewspace.setAdapter(new MyAdapter3(Park_space.this,myspaceList));
+
+                recyclerViewspace.setAdapter(new MyAdapter3(Park_space.this, (ArrayList<SpacePark>) myspaceList){
+
+
+                });
             }
 
             @Override

@@ -75,6 +75,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     public interface Itemclicklistener{
         void onitemclick(City details);
+
+
     }
 
     public static class MyViewHolder extends  RecyclerView.ViewHolder{

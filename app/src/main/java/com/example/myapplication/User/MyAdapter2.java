@@ -31,7 +31,7 @@ public class MyAdapter2 extends RecyclerView.Adapter<MyAdapter2.MyViewHolder> {
 
 
 
-       // this.mItemlistener=itemclicklistener;
+
     }
 
 

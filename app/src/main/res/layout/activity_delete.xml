@@ -24,30 +24,6 @@
         app:layout_constraintTop_toBottomOf="@+id/Mall_Delete" />
 
     <EditText
-        android:id="@+id/City_Delete"
-        android:layout_width="305dp"
-        android:layout_height="37dp"
-        android:layout_marginHorizontal="20dp"
-
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="344dp"
-        android:background="@drawable/custom_input"
-        android:drawableStart="@drawable/delete_tv"
-        android:drawablePadding="10dp"
-        android:ems="10"
-        android:hint=" Enter City  "
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        android:paddingStart="12dp"
-        android:paddingEnd="12dp"
-        android:textAlignment="viewStart"
-        android:textColor="#143D59"
-        android:textColorHint="#143d59"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
         android:id="@+id/Mall_Delete"
         android:layout_width="305dp"
         android:layout_height="37dp"
@@ -105,7 +81,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <Spinner
-        android:id="@+id/s"
+        android:id="@+id/spinner2"
         android:layout_width="277dp"
         android:layout_height="35dp"
         android:layout_marginStart="64dp"
