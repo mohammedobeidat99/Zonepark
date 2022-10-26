@@ -74,12 +74,18 @@ public class Park_space extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 myspaceList.clear();
                 for(DataSnapshot mallinfo : snapshot.child("mallinfo").child(city).child(mallname).child("space").getChildren()){
-                    //final String gets= String.valueOf(String.valueOf(mallinfo.getKey()));
-                    final String getNum= String.valueOf(String.valueOf(mallinfo.getKey()));
+                    final String getStatus= String.valueOf(String.valueOf(mallinfo.child("status").getValue()));
+                    final String getNumber= String.valueOf(String.valueOf(mallinfo.getKey()));
 
 
-                  SpacePark myspace=new SpacePark(getNum);
+
+
+
+                  SpacePark myspace=new SpacePark(getNumber,getStatus);
                   myspaceList.add(myspace);
+
+
+
             }
 
                 recyclerViewspace.setAdapter(new MyAdapter3(Park_space.this, (ArrayList<SpacePark>) myspaceList){

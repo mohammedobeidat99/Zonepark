@@ -1,6 +1,7 @@
 package com.example.myapplication.User;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,9 +43,17 @@ public class MyAdapter3 extends RecyclerView.Adapter<MyAdapter3.MyViewHolder> {
 
         SpacePark spacePark= spaceArrayList.get(position);
 
+       holder.number.setText(spacePark.getId());
 
-        holder.number.setText(spacePark.getId());
-        holder.status.setText(String.valueOf(spacePark.getStatus()));
+
+       holder.status.setText(spacePark.getStatus());
+
+        if(holder.status.getText().equals("true")){
+            holder.status.setText(".");
+            holder.status.setTextColor(Color.GREEN);
+        }else if(holder.status.getText().equals("false")){
+            holder.status.setText(".");
+        holder.status.setTextColor(Color.RED);}
 
      /*  holder.itemView.setOnClickListener(view -> {
            xItemlistener.onitemclick(spaceArrayList.get(position));
@@ -53,7 +62,12 @@ public class MyAdapter3 extends RecyclerView.Adapter<MyAdapter3.MyViewHolder> {
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(view.getContext(), ""+spacePark.getStatus(), Toast.LENGTH_SHORT).show();
+                if (spacePark.getStatus().equals("false")) {
+                    Toast.makeText(view.getContext(), "Not Available" , Toast.LENGTH_SHORT).show();
+                }
+                else
+                    Toast.makeText(view.getContext(), spacePark.getId()+" OK" , Toast.LENGTH_SHORT).show();
+
             }
         });
     }
@@ -73,7 +87,7 @@ public class MyAdapter3 extends RecyclerView.Adapter<MyAdapter3.MyViewHolder> {
         TextView number , status;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            number=itemView.findViewById(R.id.text_space);
+           number=itemView.findViewById(R.id.text_space);
             status=itemView.findViewById(R.id.avalbvle);
 
         }
