@@ -34,12 +34,13 @@
 
     <TextView
         android:id="@+id/name_mall2"
-        android:layout_width="187dp"
-        android:layout_height="34dp"
+        android:layout_width="266dp"
+        android:layout_height="57dp"
         android:layout_marginTop="40dp"
         android:fontFamily="@font/chilanka"
         android:gravity="center"
-        android:textSize="23dp"
+        android:text="park"
+        android:textSize="23sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

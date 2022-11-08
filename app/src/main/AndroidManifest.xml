@@ -11,6 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
+            android:name=".Scan_page"
+            android:exported="false" />
+        <activity
             android:name=".Admin.cities"
             android:exported="false" />
         <activity

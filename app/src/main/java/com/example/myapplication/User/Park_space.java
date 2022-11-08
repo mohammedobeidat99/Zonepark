@@ -55,15 +55,14 @@ public class Park_space extends AppCompatActivity {
         recyclerViewspace.setLayoutManager(new LinearLayoutManager(this));
         recyclerViewspace.setLayoutManager(new StaggeredGridLayoutManager(3,StaggeredGridLayoutManager.VERTICAL));
         lists = new ArrayList<>();
-        myAdapter3 = new MyAdapter3(this,lists );
-
+        myAdapter3 = new MyAdapter3(this,lists ) ;
 
         Intent intent1 = getIntent();
         String city=intent1.getStringExtra("city");
-
         Intent intent2 = getIntent();
         String mallname = intent2.getStringExtra("mall");
         namemall.setText("Welcome to "+mallname);
+
 
 
 

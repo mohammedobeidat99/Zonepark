@@ -1,6 +1,7 @@
 package com.example.myapplication.User;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,13 +13,18 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication.R;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
 public class MyAdapter3 extends RecyclerView.Adapter<MyAdapter3.MyViewHolder> {
 
+    private DatabaseReference database= FirebaseDatabase.getInstance().getReference();
+
     Context context;
    ArrayList<SpacePark> spaceArrayList;
+   Intent intent;
 
    // private Itemclicklistener xItemlistener;
 
@@ -37,38 +43,57 @@ public class MyAdapter3 extends RecyclerView.Adapter<MyAdapter3.MyViewHolder> {
         View v= LayoutInflater.from(parent.getContext()).inflate(R.layout.item3,parent,false);
 
         return new MyViewHolder(v);
+
     }
     @Override
     public void onBindViewHolder(@NonNull MyAdapter3.MyViewHolder holder, int position) {
 
+
         SpacePark spacePark= spaceArrayList.get(position);
 
        holder.number.setText(spacePark.getId());
-
-
        holder.status.setText(spacePark.getStatus());
 
-        if(holder.status.getText().equals("true")){
+
+
+       if(holder.status.getText().equals("true")){
             holder.status.setText(".");
             holder.status.setTextColor(Color.GREEN);
         }else if(holder.status.getText().equals("false")){
             holder.status.setText(".");
         holder.status.setTextColor(Color.RED);}
 
-     /*  holder.itemView.setOnClickListener(view -> {
-           xItemlistener.onitemclick(spaceArrayList.get(position));
-        });
-*/
+
+
         holder.itemView.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
+
+
+
+
+
+
+
+
+
+                if (spacePark.getStatus().equals("true"))
+                    Toast.makeText(view.getContext(), spacePark.getId()+" OK" , Toast.LENGTH_SHORT).show();
+                FirebaseDatabase.getInstance().getReference("mallinfo").child("Amman").child("Maka Mall").child("space").child("1").child("status").setValue(false);
+
+
+
                 if (spacePark.getStatus().equals("false")) {
                     Toast.makeText(view.getContext(), "Not Available" , Toast.LENGTH_SHORT).show();
+
+                    FirebaseDatabase.getInstance().getReference("mallinfo").child("Amman").child("Maka Mall").child("space").child("1").child("status").setValue(true);
                 }
-                else
-                    Toast.makeText(view.getContext(), spacePark.getId()+" OK" , Toast.LENGTH_SHORT).show();
+
 
             }
+
+
         });
     }
     @Override
@@ -82,14 +107,19 @@ public class MyAdapter3 extends RecyclerView.Adapter<MyAdapter3.MyViewHolder> {
 
 
 
+
     public static class MyViewHolder extends  RecyclerView.ViewHolder{
 
-        TextView number , status;
+        TextView number , status ,r;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
            number=itemView.findViewById(R.id.text_space);
             status=itemView.findViewById(R.id.avalbvle);
 
+
+
         }
     }
+
+
 }
