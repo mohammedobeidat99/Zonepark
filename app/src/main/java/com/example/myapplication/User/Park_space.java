@@ -68,6 +68,9 @@ public class Park_space extends AppCompatActivity {
 
 
 
+
+
+
         database.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -75,10 +78,6 @@ public class Park_space extends AppCompatActivity {
                 for(DataSnapshot mallinfo : snapshot.child("mallinfo").child(city).child(mallname).child("space").getChildren()){
                     final String getStatus= String.valueOf(String.valueOf(mallinfo.child("status").getValue()));
                     final String getNumber= String.valueOf(String.valueOf(mallinfo.getKey()));
-
-
-
-
 
                   SpacePark myspace=new SpacePark(getNumber,getStatus);
                   myspaceList.add(myspace);

@@ -17,7 +17,7 @@ public class SpacePark {
         this.status = status;
     }
 
-    private String id;
+    public String id;
 
 
     public String getStatus() {
@@ -33,5 +33,5 @@ public class SpacePark {
         this.status = status;
     }
 
-    private String status;
+    public String status;
 }

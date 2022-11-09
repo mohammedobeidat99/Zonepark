@@ -6,13 +6,15 @@ import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication.R;
+import com.example.myapplication.Scan_page;
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -22,7 +24,7 @@ public class MyAdapter3 extends RecyclerView.Adapter<MyAdapter3.MyViewHolder> {
 
     private DatabaseReference database= FirebaseDatabase.getInstance().getReference();
 
-    Context context;
+    static Context context;
    ArrayList<SpacePark> spaceArrayList;
    Intent intent;
 
@@ -64,61 +66,97 @@ public class MyAdapter3 extends RecyclerView.Adapter<MyAdapter3.MyViewHolder> {
         holder.status.setTextColor(Color.RED);}
 
 
+       holder.itemView.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
 
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
+               View modelBottomSheet = LayoutInflater.from(context).inflate(R.layout.item_scan, null);
+               BottomSheetDialog dialog = new BottomSheetDialog(context);
+               dialog.setContentView(modelBottomSheet);
+               dialog.show();
 
-            @Override
-            public void onClick(View view) {
-
-
-
-
-
-
-
-
-
-                if (spacePark.getStatus().equals("true"))
-                    Toast.makeText(view.getContext(), spacePark.getId()+" OK" , Toast.LENGTH_SHORT).show();
-                FirebaseDatabase.getInstance().getReference("mallinfo").child("Amman").child("Maka Mall").child("space").child("1").child("status").setValue(false);
+               TextView numpark=modelBottomSheet.findViewById(R.id.NumberSpace);
+               numpark.setText("Space "+spacePark.getId());
+               Button  scan=modelBottomSheet.findViewById(R.id.button);
 
 
+               TextView spark=modelBottomSheet.findViewById(R.id.st);
+               if(spacePark.getStatus().equals("true")){
+               spark.setText("Parking number "+ spacePark.getId() +" available you can stop,Please scan QR code. ");
+               scan.setOnClickListener(new View.OnClickListener() {
+                   @Override
+                   public void onClick(View view) {
+                       Intent intent = new Intent(context, Scan_page.class);
+                       intent.putExtra("num",spacePark.getId());
+                       intent.putExtra("s1",spacePark.getStatus());
+                      // context.startActivity(context, Scan_page.class);
+                       context.startActivity(intent);
 
-                if (spacePark.getStatus().equals("false")) {
-                    Toast.makeText(view.getContext(), "Not Available" , Toast.LENGTH_SHORT).show();
 
-                    FirebaseDatabase.getInstance().getReference("mallinfo").child("Amman").child("Maka Mall").child("space").child("1").child("status").setValue(true);
-                }
+                   }
+               });
+               }
+               else if (spacePark.getStatus().equals("false")) {
+                   spark.setText("Parking number " + spacePark.getId() + " is not available please select another parking. ");
+
+                  // scan.setVisibility(view.INVISIBLE);
+                   scan.setOnClickListener(new View.OnClickListener() {
+                       @Override
+                       public void onClick(View view) {
+                           Intent intent = new Intent(context, Scan_page.class);
+                           intent.putExtra("num",spacePark.getId());
+                           intent.putExtra("s1",spacePark.getStatus());
+                           // context.startActivity(context, Scan_page.class);
+                           context.startActivity(intent);
 
 
-            }
+                       }
+                   });
 
 
-        });
+               }
+
+
+
+
+           }
+       });
     }
     @Override
     public int getItemCount() {
         return spaceArrayList.size();
     }
 
+    public static class MyViewHolder extends  RecyclerView.ViewHolder {
+        //implements  View.OnClickListener
 
-
-
-
-
-
-
-    public static class MyViewHolder extends  RecyclerView.ViewHolder{
-
-        TextView number , status ,r;
+        TextView number , NumberSpace ,status,ss ;
+        Button button;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
            number=itemView.findViewById(R.id.text_space);
             status=itemView.findViewById(R.id.avalbvle);
+            NumberSpace=itemView.findViewById(R.id.NumberSpace);
+            ss=itemView.findViewById(R.id.st);
+           button=itemView.findViewById(R.id.button);
+
+           // itemView.setOnClickListener(this);
 
 
 
         }
+/*
+        @Override
+        public void onClick(View view) {
+            int postion =getAdapterPosition();
+            Toast.makeText(context, "park"+postion, Toast.LENGTH_SHORT).show();
+                Intent intent =new Intent(context, Scan_page.class);
+                context.startActivity(intent);
+
+
+        }
+        */
+
     }
 
 

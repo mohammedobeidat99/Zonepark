@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_sheet"
+    android:layout_width="match_parent"
+    android:layout_height="270dp"
+    android:background="#fff"
+    android:orientation="vertical"
+    android:paddingBottom="10dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    app:behavior_hideable="true"
+    app:behavior_peekHeight="56dp"
+    app:layout_behavior="android.support.design.widget.BottomSheetBehavior">
+
+
+    <TextView
+        android:id="@+id/NumberSpace"
+
+        android:layout_width="299dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text=" Number Park.."
+        android:textColor="#43A047"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+
+    <TextView
+        android:id="@+id/st"
+        android:layout_width="304dp"
+        android:layout_height="73dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:textColor="#43A047"
+        android:text="Status Park.."
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="150dp"
+        android:layout_height="80dp"
+        android:layout_marginLeft="105dp"
+
+        android:layout_marginTop="20dp"
+        android:background="@drawable/code_scanner"
+        android:textColor="@android:color/white"
+        android:visibility="visible" />
+
+
+
+</LinearLayout>
