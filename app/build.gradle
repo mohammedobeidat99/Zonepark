@@ -25,7 +25,7 @@ android {
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+       targetCompatibility JavaVersion.VERSION_1_8
     }
 }
 
@@ -49,6 +49,8 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
     implementation 'com.airbnb.android:lottie:4.2.2'
     implementation 'com.orhanobut:dialogplus:1.11@aar'
+    implementation 'com.journeyapps:zxing-android-embedded:4.3.0'
+
 
 
 
