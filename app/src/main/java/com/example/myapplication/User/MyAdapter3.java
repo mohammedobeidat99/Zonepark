@@ -1,5 +1,6 @@
 package com.example.myapplication.User;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
@@ -80,7 +81,12 @@ public class MyAdapter3 extends RecyclerView.Adapter<MyAdapter3.MyViewHolder> {
                Button  scan=modelBottomSheet.findViewById(R.id.button);
 
 
+
                TextView spark=modelBottomSheet.findViewById(R.id.st);
+
+               Intent intent = ((Activity) context).getIntent();
+               String m=intent.getStringExtra("mall");
+              // ((Activity) context).finish();
                if(spacePark.getStatus().equals("true")){
                spark.setText("Parking number "+ spacePark.getId() +" available you can stop,Please scan QR code. ");
                scan.setOnClickListener(new View.OnClickListener() {
@@ -89,6 +95,7 @@ public class MyAdapter3 extends RecyclerView.Adapter<MyAdapter3.MyViewHolder> {
                        Intent intent = new Intent(context, Scan_page.class);
                        intent.putExtra("num",spacePark.getId());
                        intent.putExtra("s1",spacePark.getStatus());
+                      // intent.putExtra("mall",m);
                       // context.startActivity(context, Scan_page.class);
                        context.startActivity(intent);
 
@@ -99,15 +106,27 @@ public class MyAdapter3 extends RecyclerView.Adapter<MyAdapter3.MyViewHolder> {
                else if (spacePark.getStatus().equals("false")) {
                    spark.setText("Parking number " + spacePark.getId() + " is not available please select another parking. ");
 
-                  // scan.setVisibility(view.INVISIBLE);
+
                    scan.setOnClickListener(new View.OnClickListener() {
                        @Override
                        public void onClick(View view) {
                            Intent intent = new Intent(context, Scan_page.class);
                            intent.putExtra("num",spacePark.getId());
                            intent.putExtra("s1",spacePark.getStatus());
+                           //intent.putExtra("mall",m);
                            // context.startActivity(context, Scan_page.class);
                            context.startActivity(intent);
+
+
+
+
+
+
+
+
+
+
+
 
 
                        }
@@ -140,7 +159,7 @@ public class MyAdapter3 extends RecyclerView.Adapter<MyAdapter3.MyViewHolder> {
             ss=itemView.findViewById(R.id.st);
            button=itemView.findViewById(R.id.button);
 
-           // itemView.setOnClickListener(this);
+
 
 
 

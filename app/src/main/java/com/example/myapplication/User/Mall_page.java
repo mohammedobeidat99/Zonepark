@@ -62,16 +62,6 @@ public class Mall_page extends AppCompatActivity {
 
 
 
-
-
-
-
-
-
-
-
-
-
         recyclerView = findViewById(R.id.rvmall);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -109,11 +99,13 @@ public class Mall_page extends AppCompatActivity {
 
     }
     public void sendMALL(String message ,String message2 ){
-        //Toast.makeText(this,message,Toast.LENGTH_SHORT).show();
         Intent intent=new Intent(Mall_page.this, Park_space.class);
         intent.putExtra("mall",message);
         intent.putExtra("city",message2);
         startActivity(intent);
+
+
+
     }
 
 

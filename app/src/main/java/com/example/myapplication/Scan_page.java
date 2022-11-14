@@ -11,6 +11,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
@@ -40,6 +41,7 @@ public class Scan_page extends AppCompatActivity   {
 
     }
 
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -47,17 +49,48 @@ public class Scan_page extends AppCompatActivity   {
                 resultCode, data);
         // test if the content is not null :
 
-        if (intentResult.getContents() != null){
-            AlertDialog.Builder builder = new AlertDialog.Builder(Scan_page.this);
-            builder.setTitle("Results");
-            builder.setMessage(intentResult.getContents());
-            builder.setNegativeButton("OK", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialogInterface, int i) {
-                    dialogInterface.dismiss();
-                }
-            });
-            builder.show();
+        Intent intent1 = getIntent();
+        String num=intent1.getStringExtra("num");
+        Intent intent2 = getIntent();
+        String ss = intent2.getStringExtra("s1");
+        Intent intent3 = getIntent();
+       // String m = intent2.getStringExtra("m");
+        String m="Maka Mall";
+
+        if (intentResult.getContents().equals(num)){
+
+
+            if (ss.equals("true")) {
+
+                FirebaseDatabase.getInstance().getReference("mallinfo").child("Amman").child(m).child("space").child(num).child("status").setValue(false);
+                AlertDialog.Builder builder = new AlertDialog.Builder(Scan_page.this);
+                builder.setTitle("Results");
+                builder.setMessage("Space Park Number "+intentResult.getContents()+" is booked Successfully.");
+                builder.setNegativeButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.dismiss();
+                    }
+                });
+                builder.show();
+            }
+            else if (ss.equals("false")) {
+
+                FirebaseDatabase.getInstance().getReference("mallinfo").child("Amman").child(m).child("space").child(num).child("status").setValue(true);
+                AlertDialog.Builder builder = new AlertDialog.Builder(Scan_page.this);
+                builder.setTitle("Results");
+                builder.setMessage("Space Park Number "+intentResult.getContents()+" is Not booked.");
+                builder.setNegativeButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.dismiss();
+                    }
+                });
+                builder.show();
+
+            }
+
+
         } else {
             Toast.makeText(this, "Sory you did not scan anything ! ", Toast.LENGTH_SHORT).show();
         }
