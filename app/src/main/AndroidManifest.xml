@@ -11,10 +11,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
-            android:name=".Scan_page"
+            android:name=".User.Scan_page"
             android:exported="false" />
         <activity
-            android:name=".Admin.cities"
+            android:name=".Admin.MainActivity"
             android:exported="false" />
         <activity
             android:name=".User.Park_space"
@@ -38,7 +38,7 @@
             android:name=".Admin.register"
             android:exported="false" />
         <activity
-            android:name=".Admin.MainActivity"
+            android:name=".Admin.cities"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

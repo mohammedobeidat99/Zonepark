@@ -3,10 +3,15 @@ package com.example.myapplication.User;
 import android.net.Uri;
 
 public class Mall {
-    String Namemall;
+    public  String Namemall;
     Uri ImageUrlmall;
 
-    public String getNamemall() {
+
+
+
+
+
+    public  String getNamemall() {
         return Namemall;
     }
 
@@ -27,6 +32,8 @@ public class Mall {
         Namemall = namemall;
         ImageUrlmall = imageUrlmall;
     }
+    public Mall(String namemall) {
+        Namemall = namemall;}
 
 
 }

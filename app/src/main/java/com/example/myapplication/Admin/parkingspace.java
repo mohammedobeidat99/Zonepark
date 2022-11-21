@@ -2,7 +2,7 @@ package com.example.myapplication.Admin;
 
 public class parkingspace   {
     private String id;
-    private boolean status=false;
+    private boolean status=true;
 
     public parkingspace() {
     }

@@ -67,7 +67,7 @@ public class Park_space extends AppCompatActivity {
 
 
 
-
+        ///////////////////
 
 
 
@@ -79,12 +79,12 @@ public class Park_space extends AppCompatActivity {
                     final String getStatus= String.valueOf(String.valueOf(mallinfo.child("status").getValue()));
                     final String getNumber= String.valueOf(String.valueOf(mallinfo.getKey()));
 
-                  SpacePark myspace=new SpacePark(getNumber,getStatus);
-                  myspaceList.add(myspace);
+                    SpacePark myspace=new SpacePark(getNumber,getStatus,city,mallname);
+                    myspaceList.add(myspace);
 
 
 
-            }
+                }
 
                 recyclerViewspace.setAdapter(new MyAdapter3(Park_space.this, (ArrayList<SpacePark>) myspaceList){
 
@@ -102,4 +102,5 @@ public class Park_space extends AppCompatActivity {
 
 
     }
+
 }

@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.User;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -11,17 +11,25 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.myapplication.Capture;
+import com.example.myapplication.R;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
 public class Scan_page extends AppCompatActivity   {
-        private Button scan;
+    private Button scan;
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scan_page);
+
+
+        /////////////////////
 
 
         scan = (Button) findViewById(R.id.scan);
@@ -53,19 +61,25 @@ public class Scan_page extends AppCompatActivity   {
         String num=intent1.getStringExtra("num");
         Intent intent2 = getIntent();
         String ss = intent2.getStringExtra("s1");
+        ////////////////////////
         Intent intent3 = getIntent();
-       // String m = intent2.getStringExtra("m");
-        String m="Maka Mall";
+        String c = intent3.getStringExtra("c");
+
+        Intent intent4 = getIntent();
+        String m = intent4.getStringExtra("m");
+
+
 
         if (intentResult.getContents().equals(num)){
 
 
-            if (ss.equals("true")) {
+            if (ss.equals("false")) {
+                //////////////////////////////////////
 
-                FirebaseDatabase.getInstance().getReference("mallinfo").child("Amman").child(m).child("space").child(num).child("status").setValue(false);
+                FirebaseDatabase.getInstance().getReference("mallinfo").child(c).child(m).child("space").child(num).child("status").setValue(true);
                 AlertDialog.Builder builder = new AlertDialog.Builder(Scan_page.this);
                 builder.setTitle("Results");
-                builder.setMessage("Space Park Number "+intentResult.getContents()+" is booked Successfully.");
+                builder.setMessage("Space Park Number "+intentResult.getContents()+" is booked Successfully. !!+"+c+"!!"+m);
                 builder.setNegativeButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
@@ -74,12 +88,12 @@ public class Scan_page extends AppCompatActivity   {
                 });
                 builder.show();
             }
-            else if (ss.equals("false")) {
+          else if (ss.equals("true")) {
 
-                FirebaseDatabase.getInstance().getReference("mallinfo").child("Amman").child(m).child("space").child(num).child("status").setValue(true);
+                FirebaseDatabase.getInstance().getReference("mallinfo").child(c).child(m).child("space").child(num).child("status").setValue(false);
                 AlertDialog.Builder builder = new AlertDialog.Builder(Scan_page.this);
                 builder.setTitle("Results");
-                builder.setMessage("Space Park Number "+intentResult.getContents()+" is Not booked.");
+                builder.setMessage("Space Park Number "+intentResult.getContents()+" is Not booked. !!+"+m);
                 builder.setNegativeButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
@@ -88,7 +102,10 @@ public class Scan_page extends AppCompatActivity   {
                 });
                 builder.show();
 
+
             }
+
+
 
 
         } else {
