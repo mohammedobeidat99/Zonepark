@@ -106,11 +106,6 @@ public class MyAdapter3 extends RecyclerView.Adapter<MyAdapter3.MyViewHolder> {
                             intent.putExtra("c",spacePark.getCname());
                             intent.putExtra("m",spacePark.getMname());
                             context.startActivity(intent);
-
-
-
-
-
                         }
                     });
                 }

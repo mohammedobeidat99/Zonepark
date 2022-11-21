@@ -223,7 +223,7 @@ public class cities extends AppCompatActivity implements AdapterView.OnItemSelec
         Delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(cities.this, com.example.myapplication.User.userMain.class);
+                Intent myIntent = new Intent(cities.this, Delete.class);
                 startActivity(myIntent);
             }
         });
