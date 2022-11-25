@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/back"
+    android:background="@drawable/back_register"
     tools:context=".Admin.cities">
 
 
@@ -37,9 +37,9 @@
         android:id="@+id/teparksnumber"
         android:layout_width="305dp"
         android:layout_height="37dp"
-        android:layout_marginStart="40dp"
+        android:layout_marginStart="52dp"
         android:layout_marginTop="320dp"
-        android:background="@drawable/custom_input"
+        android:background="@drawable/blue_outline"
         android:drawableStart="@drawable/custompark"
         android:drawablePadding="10dp"
         android:ems="10"
@@ -60,9 +60,9 @@
         android:id="@+id/temall"
         android:layout_width="305dp"
         android:layout_height="37dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="260dp"
-        android:background="@drawable/custom_input"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="256dp"
+        android:background="@drawable/blue_outline"
         android:drawableStart="@drawable/custom_shop"
         android:drawablePadding="10dp"
         android:ems="10"
@@ -83,8 +83,8 @@
         android:layout_width="284dp"
         android:layout_height="50dp"
         android:gravity="center"
-        android:text="Welcome  Admin"
-        android:textColor="#FFFFFF"
+        android:text="Welcome Admin"
+        android:textColor="@color/title"
         android:textSize="30dp"
         android:textStyle="bold"
 
@@ -103,11 +103,12 @@
 
 
         android:layout_marginStart="80dp"
-        android:layout_marginTop="596dp"
+        android:layout_marginTop="600dp"
         android:layout_marginEnd="81dp"
         android:background="@drawable/button_shape"
         android:text="Insert"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -140,7 +141,7 @@
         android:drawableEnd="@drawable/delete_tv"
         android:gravity="center"
         android:text="Delete Mall"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/teal_200"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -169,13 +170,19 @@
         app:srcCompat="@android:drawable/ic_menu_crop" />
 
     <Spinner
-
         android:id="@+id/spinner"
         android:layout_width="305dp"
         android:layout_height="37dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="159dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="156dp"
+        android:background="@drawable/blue_outline"
+        android:popupBackground="@color/title"
+        android:spinnerMode="dialog"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+
+        />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

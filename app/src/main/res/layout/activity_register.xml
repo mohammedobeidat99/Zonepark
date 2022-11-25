@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FCD45A"
+    android:background="@drawable/back_register"
     tools:context=".Admin.register">
 
 
@@ -12,8 +12,8 @@
         android:id="@+id/textView15"
         android:layout_width="189dp"
         android:layout_height="35dp"
-        android:layout_marginStart="88dp"
-        android:layout_marginTop="621dp"
+        android:layout_marginStart="82dp"
+        android:layout_marginTop="600dp"
         android:gravity="center"
         android:text="Already have an Account? "
         android:textColor="#7C7D7E"
@@ -26,14 +26,14 @@
         android:id="@+id/login"
         android:layout_width="124dp"
         android:layout_height="19dp"
-        android:layout_marginStart="220dp"
-        android:layout_marginTop="628dp"
+        android:layout_marginStart="213dp"
+        android:layout_marginTop="607dp"
         android:gravity="center"
         android:text="Login"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/title"
         android:textSize="15sp"
         android:textStyle="bold"
-        app:hintTextColor="@color/white"
+        app:hintTextColor="@color/title"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
@@ -64,9 +64,9 @@
 
         android:fontFamily="sans-serif"
         android:gravity="center|center_vertical"
-        android:text="Register"
-        android:textColor="#FFFFFF"
-        android:textSize="32sp"
+        android:text="Admin Register"
+        android:textColor="@color/title"
+        android:textSize="28sp"
 
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -81,7 +81,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="190dp"
-        app:hintTextColor="@color/white"
+        app:hintTextColor="@color/title"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -105,7 +105,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="270dp"
-        app:hintTextColor="@color/white"
+        app:hintTextColor="@color/title"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -117,7 +117,7 @@
             android:hint="Email"
             android:inputType="textEmailAddress"
             android:lines="1"
-            android:textColorHint="@color/white" />
+            android:textColorHint="@color/title" />
     </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -130,12 +130,12 @@
         android:layout_marginTop="350dp"
         app:counterEnabled="true"
         app:counterMaxLength="16"
-        app:hintTextColor="@color/white"
+        app:hintTextColor="@color/title"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:passwordToggleEnabled="true"
-        app:passwordToggleTint="@color/white">
+        app:passwordToggleTint="@color/title">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/password"
@@ -162,12 +162,12 @@
         android:layout_marginTop="430dp"
         app:counterEnabled="true"
         app:counterMaxLength="16"
-        app:hintTextColor="@color/white"
+        app:hintTextColor="@color/title"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:passwordToggleEnabled="true"
-        app:passwordToggleTint="@color/white">
+        app:passwordToggleTint="@color/title">
 
 
         <com.google.android.material.textfield.TextInputEditText
@@ -176,9 +176,10 @@
             android:layout_height="match_parent"
             android:hint="Confarm Password"
             android:inputType="textPassword"
+
             android:lines="1"
             android:maxLength="16"
-            android:textColorHint="@color/white" />
+            android:textColorHint="@color/title" />
 
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -186,9 +187,9 @@
 
     <Button
         android:id="@+id/btnRegister"
-        android:layout_width="264dp"
-        android:layout_height="49dp"
-        android:layout_marginBottom="140dp"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="196dp"
         android:background="@drawable/button_shape"
         android:text="register"
         android:textColor="@android:color/white"

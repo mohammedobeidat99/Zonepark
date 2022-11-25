@@ -84,8 +84,6 @@ public class cities extends AppCompatActivity implements AdapterView.OnItemSelec
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cities);
 
-
-
         temall = (EditText) findViewById(R.id.temall);
         tecity = (EditText) findViewById(R.id.City_Delete);
         teparksnumber = (EditText) findViewById(R.id.teparksnumber);

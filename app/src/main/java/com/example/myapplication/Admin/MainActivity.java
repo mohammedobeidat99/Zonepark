@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login_admin);
         register=(TextView) findViewById(R.id.register);
         register.setOnClickListener(this);
         signIn=(Button) findViewById(R.id.signIn);
@@ -49,6 +49,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         password=(EditText) findViewById(R.id.password);
         mAuth = FirebaseAuth.getInstance();
         dialog=new Dialog(this);
+
+
+
 
 
     }
