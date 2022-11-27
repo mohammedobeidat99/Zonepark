@@ -7,6 +7,7 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -22,9 +23,11 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.myapplication.About;
 import com.example.myapplication.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
@@ -38,11 +41,6 @@ import java.util.List;
 
 
 public class cities extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
-    ///data from database
-    //private FirebaseUser user;
-    //private DatabaseReference reference;
-    //private String userID;
-   // List<String> mylist;
     EditText tecity,temall,teparksnumber,num;
     Button btnsave ;
     DatabaseReference reff;
@@ -52,6 +50,9 @@ public class cities extends AppCompatActivity implements AdapterView.OnItemSelec
     EditText tenumber;
     AlertDialog.Builder Alert;
     int spacenumber=0;
+
+
+
 
 
     //image view city&mall
@@ -64,7 +65,6 @@ public class cities extends AppCompatActivity implements AdapterView.OnItemSelec
     private int img_request_id2 = 20;
     private Uri imgUri2;
     Spinner spinner;
-
     String chosen_spinner;
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
@@ -79,17 +79,57 @@ public class cities extends AppCompatActivity implements AdapterView.OnItemSelec
 
 
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cities);
+
+        BottomNavigationView bottomNavigationView=findViewById(R.id.navigationView);
+
+        // Set Home selected
+        bottomNavigationView.setSelectedItemId(R.id.home);
+
+        // Perform item selected listener
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                switch(item.getItemId())
+                {
+                    case R.id.Delete:
+                        startActivity(new Intent(getApplicationContext(),Delete.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.home:
+                        return true;
+                    case R.id.Space:
+                        startActivity(new Intent(getApplicationContext(), About.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                }
+                return false;
+            }
+        });
+
+
+
+
+
+
+
+
+
+
+
 
         temall = (EditText) findViewById(R.id.temall);
         tecity = (EditText) findViewById(R.id.City_Delete);
         teparksnumber = (EditText) findViewById(R.id.teparksnumber);
         btnsave = (Button) findViewById(R.id.btnsave);
         spinner=(Spinner) findViewById(R.id.spinner);
-        Delete = findViewById(R.id.tvDelete);
+       // Delete = findViewById(R.id.tvDelete);
         reff = FirebaseDatabase.getInstance().getReference().child("mallinfo");
         mallinfo1 = new mallinfo();
         sp = new parkingspace();
@@ -99,11 +139,6 @@ public class cities extends AppCompatActivity implements AdapterView.OnItemSelec
         adapter.setDropDownViewResource(android.R.layout.simple_selectable_list_item);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
-
-
-
-
-
         imageView=(ImageView) findViewById(R.id.imageView);
         imageView2=(ImageView) findViewById(R.id.imageView2);
         storage1=FirebaseStorage.getInstance();
@@ -218,13 +253,13 @@ public class cities extends AppCompatActivity implements AdapterView.OnItemSelec
                     }
             }
         });
-        Delete.setOnClickListener(new View.OnClickListener() {
+/*        Delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent myIntent = new Intent(cities.this, Delete.class);
                 startActivity(myIntent);
             }
-        });
+        });*/
 
     }
   /* public   void upload_space(){
@@ -390,6 +425,7 @@ public class cities extends AppCompatActivity implements AdapterView.OnItemSelec
                 e.printStackTrace();
             }
         }
+
 
 
 
