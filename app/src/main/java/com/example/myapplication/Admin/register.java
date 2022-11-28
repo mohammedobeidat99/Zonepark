@@ -33,7 +33,7 @@ public class register extends AppCompatActivity implements View.OnClickListener{
         etName = (EditText) findViewById(R.id.etName);
         login=findViewById(R.id.login);
 
-        etEmail = (EditText) findViewById(R.id.City_Delete);
+        etEmail = (EditText) findViewById(R.id.EmailRegester);
         etPassword = (EditText) findViewById(R.id.password);
         etPassword2 = (EditText) findViewById(R.id.etPassword2);
         btnRegister=(Button) findViewById(R.id.btnRegister);

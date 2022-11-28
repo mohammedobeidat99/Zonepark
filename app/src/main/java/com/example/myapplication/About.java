@@ -8,7 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.myapplication.Admin.Delete;
-import com.example.myapplication.Admin.cities;
+import com.example.myapplication.Admin.home;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class About extends AppCompatActivity {
@@ -38,7 +38,7 @@ public class About extends AppCompatActivity {
                     case R.id.Space:
                         return true;
                     case R.id.home:
-                        startActivity(new Intent(getApplicationContext(), cities.class));
+                        startActivity(new Intent(getApplicationContext(), home.class));
                         overridePendingTransition(0,0);
                         return true;
                 }

@@ -18,7 +18,7 @@
             android:name=".User.Scan_page"
             android:exported="false" />
         <activity
-            android:name=".Admin.MainActivity"
+            android:name=".Admin.home"
             android:exported="false" />
         <activity
             android:name=".User.Park_space"
@@ -33,16 +33,16 @@
             android:name=".User.userMain"
             android:exported="true" />
         <activity
-            android:name=".SplashActivity"
+            android:name=".Admin.MainActivity"
             android:exported="false" />
         <activity
             android:name=".User.startUser"
             android:exported="false" />
         <activity
-            android:name=".Admin.register"
+            android:name=".SplashActivity"
             android:exported="false" />
         <activity
-            android:name=".Admin.cities"
+            android:name=".Admin.register"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

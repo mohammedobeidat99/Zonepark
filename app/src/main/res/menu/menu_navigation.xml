@@ -6,6 +6,7 @@
         android:id="@+id/home"
         android:title="Home"
         android:icon="@drawable/home"/>
+
     <item
         android:id="@+id/Delete"
         android:title="Delete"

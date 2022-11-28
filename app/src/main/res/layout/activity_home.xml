@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/back_register"
-    tools:context=".Admin.cities">
+    android:background="@drawable/cities"
+    tools:context=".Admin.home">
 
 
     <TextView
@@ -157,9 +157,7 @@
         android:popupBackground="@color/title"
         android:spinnerMode="dialog"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-
-        />
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <FrameLayout
         android:layout_width="0dp"
@@ -173,14 +171,16 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/navigationView"
         android:layout_width="match_parent"
+        android:layout_marginLeft="0.5dp"
         android:layout_height="wrap_content"
-        app:itemBackground="@color/title"
+        android:background="@drawable/round"
         app:itemIconTint="@drawable/selector"
         app:itemTextColor="@drawable/selector"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/menu_navigation" />
+        app:menu="@menu/menu_navigation"
+       />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

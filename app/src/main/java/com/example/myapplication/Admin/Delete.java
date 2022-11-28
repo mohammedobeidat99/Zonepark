@@ -78,7 +78,7 @@ public class Delete extends AppCompatActivity implements AdapterView.OnItemSelec
                 switch(item.getItemId())
                 {
                     case R.id.home:
-                        startActivity(new Intent(getApplicationContext(),cities.class));
+                        startActivity(new Intent(getApplicationContext(), home.class));
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.Delete:

@@ -40,7 +40,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class cities extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class home extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     EditText tecity,temall,teparksnumber,num;
     Button btnsave ;
     DatabaseReference reff;
@@ -84,7 +84,7 @@ public class cities extends AppCompatActivity implements AdapterView.OnItemSelec
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cities);
+        setContentView(R.layout.activity_home);
 
         BottomNavigationView bottomNavigationView=findViewById(R.id.navigationView);
 
@@ -125,11 +125,10 @@ public class cities extends AppCompatActivity implements AdapterView.OnItemSelec
 
 
         temall = (EditText) findViewById(R.id.temall);
-        tecity = (EditText) findViewById(R.id.City_Delete);
+        tecity = (EditText) findViewById(R.id.EmailRegester);
         teparksnumber = (EditText) findViewById(R.id.teparksnumber);
         btnsave = (Button) findViewById(R.id.btnsave);
         spinner=(Spinner) findViewById(R.id.spinner);
-       // Delete = findViewById(R.id.tvDelete);
         reff = FirebaseDatabase.getInstance().getReference().child("mallinfo");
         mallinfo1 = new mallinfo();
         sp = new parkingspace();
@@ -175,14 +174,7 @@ public class cities extends AppCompatActivity implements AdapterView.OnItemSelec
                 mallinfo1.setMall(temall.getText().toString().trim());
                 mallinfo1.setParksnumber(teparksnumber.getText().toString().trim());
 
-                //mallinfo1.setParksnumber(Parksnumber);
-              // sp.setId(teparksnumber.getText().toString());
-               // mallinfo1.setSpace(sp);
 
-
-
-
-                    //String City =chosen_spinner;
                     String Mall =temall.getText().toString().trim();
                     String parknum =teparksnumber.getText().toString().trim();
                     //int park=Integer.parseInt(parknum);
@@ -247,7 +239,7 @@ public class cities extends AppCompatActivity implements AdapterView.OnItemSelec
                             Alart();
                         }
                         else {
-                            Toast.makeText(cities.this, "Please enter a valid city", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(home.this, "Please enter a valid city", Toast.LENGTH_SHORT).show();
                         }
 
                     }
@@ -256,7 +248,7 @@ public class cities extends AppCompatActivity implements AdapterView.OnItemSelec
 /*        Delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(cities.this, Delete.class);
+                Intent myIntent = new Intent(home.this, Delete.class);
                 startActivity(myIntent);
             }
         });*/
@@ -285,12 +277,12 @@ public class cities extends AppCompatActivity implements AdapterView.OnItemSelec
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                     progressDialog.dismiss();
-                    Toast.makeText(cities.this, "Saved successful", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(home.this, "Saved successful", Toast.LENGTH_SHORT).show();
                 }
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
                 public void onFailure(@NonNull Exception e) {
-                    Toast.makeText(cities.this, "ERROR... "+e.getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(home.this, "ERROR... "+e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
             }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
                 @Override
@@ -313,7 +305,7 @@ public class cities extends AppCompatActivity implements AdapterView.OnItemSelec
     //insert city photo
     private void Alart(){
 
-        Alert=new AlertDialog.Builder(cities.this);
+        Alert=new AlertDialog.Builder(home.this);
         Alert.setTitle("Welcome Admin ");
         Alert.setMessage("Are you sure to add "+temall.getText().toString()+" in the city "+chosen_spinner);
         Alert.setCancelable(true);
@@ -343,7 +335,7 @@ public class cities extends AppCompatActivity implements AdapterView.OnItemSelec
         saveInFirebase();
         reff.child(chosen_spinner).child(temall.getText().toString()).push().setValue(mallinfo1);
         CreateSpace();
-        Toast.makeText(cities.this, "Successful Insert", Toast.LENGTH_SHORT).show();
+        Toast.makeText(home.this, "Successful Insert", Toast.LENGTH_SHORT).show();
        Clear();
     }
     private void CreateSpace(){
@@ -375,12 +367,12 @@ public class cities extends AppCompatActivity implements AdapterView.OnItemSelec
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                     progressDialog.dismiss();
-                    Toast.makeText(cities.this, "Saved successful", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(home.this, "Saved successful", Toast.LENGTH_SHORT).show();
                 }
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
                 public void onFailure(@NonNull Exception e) {
-                    Toast.makeText(cities.this, "ERROR... "+e.getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(home.this, "ERROR... "+e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
             }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
                 @Override

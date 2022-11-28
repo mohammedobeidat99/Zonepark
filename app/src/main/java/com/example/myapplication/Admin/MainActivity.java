@@ -9,6 +9,8 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -42,14 +44,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_admin);
         register=(TextView) findViewById(R.id.register);
-        register.setOnClickListener(this);
+          register.setOnClickListener(this);
         signIn=(Button) findViewById(R.id.signIn);
         signIn.setOnClickListener(this);
-        Email=(EditText) findViewById(R.id.City_Delete);
+        Email=(EditText) findViewById(R.id.Email);
         password=(EditText) findViewById(R.id.password);
         mAuth = FirebaseAuth.getInstance();
         dialog=new Dialog(this);
-
+        overridePendingTransition(0,0);
+        View relativeLayout=findViewById(R.id.login_container);
+        Animation animation= AnimationUtils.loadAnimation(this,android.R.anim.fade_in);
+        relativeLayout.startAnimation(animation);
 
 
 
@@ -86,7 +91,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
-                    startActivity(new Intent(MainActivity.this, cities.class));
+                    startActivity(new Intent(MainActivity.this, home.class));
                 }else{
                     Toast.makeText(MainActivity.this, "Faild to login check your email/password", Toast.LENGTH_SHORT).show();
                 }
