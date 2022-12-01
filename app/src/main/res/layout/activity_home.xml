@@ -12,7 +12,7 @@
         android:id="@+id/textView12"
         android:layout_width="124dp"
         android:layout_height="22dp"
-        android:layout_marginTop="544dp"
+        android:layout_marginTop="520dp"
         android:gravity="center"
         android:text="Select photo Mall"
         android:textColor="#7C7D7E"
@@ -25,7 +25,7 @@
         android:id="@+id/textView16"
         android:layout_width="124dp"
         android:layout_height="22dp"
-        android:layout_marginTop="544dp"
+        android:layout_marginTop="520dp"
         android:gravity="center"
         android:text="Select photo City"
         android:textColor="#7C7D7E"
@@ -35,48 +35,46 @@
 
     <EditText
         android:id="@+id/teparksnumber"
-        android:layout_width="305dp"
-        android:layout_height="37dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="320dp"
-        android:background="@drawable/blue_outline"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/custom_input"
         android:drawableStart="@drawable/custompark"
-        android:drawablePadding="10dp"
+        android:drawablePadding="7dp"
         android:ems="10"
         android:hint=" Enter number of parks "
         android:includeFontPadding="true"
         android:inputType="number"
         android:minHeight="48dp"
-        android:paddingStart="12dp"
-        android:paddingEnd="12dp"
+        android:paddingStart="0dp"
+        android:paddingEnd="0dp"
         android:textAlignment="viewStart"
         android:textColor="#143D59"
         android:textColorHint="#143d59"
         android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/temall"
+        app:layout_constraintStart_toStartOf="@+id/temall"
+        app:layout_constraintTop_toBottomOf="@+id/temall" />
 
     <EditText
         android:id="@+id/temall"
-        android:layout_width="305dp"
-        android:layout_height="37dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="256dp"
-        android:background="@drawable/blue_outline"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:background="@drawable/custom_input"
         android:drawableStart="@drawable/custom_shop"
-        android:drawablePadding="10dp"
+        android:drawablePadding="7dp"
         android:ems="10"
         android:hint=" Enter Mall Name "
         android:inputType="textCapWords"
         android:minHeight="48dp"
-        android:paddingStart="12dp"
-        android:paddingEnd="12dp"
+        android:layout_marginTop="20dp"
         android:textAlignment="viewStart"
         android:textColor="#143D59"
         android:textColorHint="#143d59"
         android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/spinner"
+        app:layout_constraintStart_toStartOf="@+id/spinner"
+        app:layout_constraintTop_toBottomOf="@+id/spinner" />
 
     <TextView
         android:id="@+id/textView"
@@ -94,7 +92,7 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.045" />
+        app:layout_constraintVertical_bias="0.111" />
 
     <Button
         android:id="@+id/btnsave"
@@ -102,71 +100,60 @@
         android:layout_height="40dp"
 
 
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="600dp"
-        android:layout_marginEnd="81dp"
+        android:layout_marginTop="579dp"
         android:background="@drawable/button_shape"
         android:text="Insert"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/imageView2"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="274dp"
         android:layout_height="27dp"
-        android:layout_marginStart="68dp"
-        android:layout_marginTop="27dp"
-        android:layout_marginEnd="69dp"
+        android:layout_marginTop="30dp"
         android:gravity="center"
-        android:text="Insert the details the mall"
+        android:text="Enter Mall Information"
         android:textColor="#7C7D7E"
         android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/spinner"
+        app:layout_constraintStart_toStartOf="@+id/spinner"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="128dp"
         android:layout_height="137dp"
-        android:layout_marginTop="404dp"
-        android:layout_marginEnd="60dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="25dp"
+        android:tag="png2"
+        app:layout_constraintEnd_toEndOf="@+id/teparksnumber"
+        app:layout_constraintTop_toBottomOf="@+id/teparksnumber"
         app:srcCompat="@android:drawable/ic_menu_crop" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="128dp"
         android:layout_height="137dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="404dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="25dp"
+        android:tag="png1"
+        app:layout_constraintStart_toStartOf="@+id/teparksnumber"
+        app:layout_constraintTop_toBottomOf="@+id/teparksnumber"
         app:srcCompat="@android:drawable/ic_menu_crop" />
+
 
     <Spinner
         android:id="@+id/spinner"
-        android:layout_width="305dp"
+        android:layout_width="172dp"
         android:layout_height="37dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="156dp"
-        android:background="@drawable/blue_outline"
+        android:layout_marginTop="208dp"
+        android:backgroundTintMode="src_atop"
         android:popupBackground="@color/title"
         android:spinnerMode="dialog"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
 
-    <FrameLayout
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="@+id/navigationView"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/navigationView"
@@ -180,7 +167,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/menu_navigation"
-       />
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

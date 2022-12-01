@@ -12,13 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
-            android:name=".About"
+            android:name=".SpaceActivity"
             android:exported="false" />
         <activity
             android:name=".User.Scan_page"
             android:exported="false" />
         <activity
-            android:name=".Admin.home"
+            android:name=".Admin.register"
             android:exported="false" />
         <activity
             android:name=".User.Park_space"
@@ -42,7 +42,7 @@
             android:name=".SplashActivity"
             android:exported="false" />
         <activity
-            android:name=".Admin.register"
+            android:name=".Admin.home"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

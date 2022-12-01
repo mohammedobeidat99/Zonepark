@@ -23,8 +23,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.myapplication.About;
 import com.example.myapplication.R;
+import com.example.myapplication.SpaceActivity;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -105,24 +105,13 @@ public class home extends AppCompatActivity implements AdapterView.OnItemSelecte
                     case R.id.home:
                         return true;
                     case R.id.Space:
-                        startActivity(new Intent(getApplicationContext(), About.class));
+                        startActivity(new Intent(getApplicationContext(), SpaceActivity.class));
                         overridePendingTransition(0,0);
                         return true;
                 }
                 return false;
             }
         });
-
-
-
-
-
-
-
-
-
-
-
 
         temall = (EditText) findViewById(R.id.temall);
         tecity = (EditText) findViewById(R.id.EmailRegester);
@@ -198,6 +187,24 @@ public class home extends AppCompatActivity implements AdapterView.OnItemSelecte
                         return;
 
                     }
+
+                if (imageView.getTag()!=("png1") || imageView2.getTag()!=("png2")){
+                    //Toast.makeText(cities.this, "Please choose photos", Toast.LENGTH_SHORT).show();
+                    Alert=new AlertDialog.Builder(home.this);
+                    Alert.setTitle("Can't add the mall ! ");
+                    Alert.setMessage("Please choose pictures of the city and the mall");
+                    Alert.setCancelable(true);
+                    Alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+
+                        }
+                    });
+                    AlertDialog dialog=Alert.create();
+                    dialog.show();
+
+                }
+
                     else {
                         if ( chosen_spinner.equalsIgnoreCase("AMMAN")) {
                             storageReferenceMall = storage2.getReference().child("City/").child("Amman/");//1
@@ -329,7 +336,7 @@ public class home extends AppCompatActivity implements AdapterView.OnItemSelecte
         dialog.show();
     }
 
-    private   void upload(){
+    private  void upload(){
 
         saveInFirebase2();
         saveInFirebase();
