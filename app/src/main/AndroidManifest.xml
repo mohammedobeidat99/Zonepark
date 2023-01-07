@@ -4,6 +4,7 @@
 
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
 
     <application
         android:allowBackup="true"
@@ -12,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
-            android:name=".SpaceActivity"
+            android:name=".User.userMain"
             android:exported="false" />
         <activity
             android:name=".User.Scan_page"
@@ -21,7 +22,7 @@
             android:name=".Admin.register"
             android:exported="false" />
         <activity
-            android:name=".User.Park_space"
+            android:name=".Admin.SpaceActivity"
             android:exported="false" />
         <activity
             android:name=".User.Mall_page"
@@ -30,16 +31,16 @@
             android:name=".Admin.Delete"
             android:exported="false" />
         <activity
-            android:name=".User.userMain"
+            android:name=".User.Park_space"
             android:exported="true" />
         <activity
             android:name=".Admin.MainActivity"
             android:exported="false" />
         <activity
-            android:name=".User.startUser"
+            android:name=".Admin.SplashActivity"
             android:exported="false" />
         <activity
-            android:name=".SplashActivity"
+            android:name=".User.startUser"
             android:exported="false" />
         <activity
             android:name=".Admin.home"
@@ -58,6 +59,8 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+
     </application>
+
 
 </manifest>

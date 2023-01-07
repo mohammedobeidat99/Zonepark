@@ -1,5 +1,6 @@
 package com.example.myapplication.Admin;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -11,10 +12,10 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.myapplication.R;
-import com.example.myapplication.SpaceActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -38,6 +39,7 @@ public class Delete extends AppCompatActivity implements AdapterView.OnItemSelec
     //////////////////////////////////////////////////////////////
     Spinner spinner3;
     String chosen_spinner3;
+    AlertDialog.Builder Alert;
 
 
     @Override
@@ -133,14 +135,32 @@ public class Delete extends AppCompatActivity implements AdapterView.OnItemSelec
         btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if(chosen_spinner3==null){
 
+                 //   Toast.makeText(Delete.this, "please select mall", Toast.LENGTH_SHORT).show();
+                    Alert=new AlertDialog.Builder(Delete.this);
+                    Alert.setTitle("Can't Delete the mall ! ");
+                    Alert.setMessage("please select mall delete.");
+                    Alert.setCancelable(true);
+                    Alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+
+                        }
+                    });
+                    AlertDialog dialog=Alert.create();
+                    dialog.show();
+
+                }
+
+                else{
                 reff.child(chosen_spinner).child(chosen_spinner3).removeValue();
                 ///************delete th image from the storage
                 storageReferenceCity.child(chosen_spinner).child(chosen_spinner3).delete();
                 Toast.makeText(Delete.this, " Done Delete "+chosen_spinner3, Toast.LENGTH_SHORT).show();
                 //}
 
-            }
+            }}
         });
 
 

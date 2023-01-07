@@ -111,27 +111,9 @@ public class MyAdapter3 extends RecyclerView.Adapter<MyAdapter3.MyViewHolder> {
                 }
                 else if (spacePark.getStatus().equals("false")) {
                     spark.setText("Parking number " + spacePark.getId() + " is not available please select another parking. ");
+                    scan.setVisibility(View.INVISIBLE);
 
 
-                    scan.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-
-                            Intent intent = new Intent(context, Scan_page.class);
-                            intent.putExtra("num",spacePark.getId());
-                            intent.putExtra("s1",spacePark.getStatus());
-                            intent.putExtra("c",spacePark.getCname());
-                            intent.putExtra("m",spacePark.getMname());
-                            // context.startActivity(context, Scan_page.class);
-                            context.startActivity(intent);
-
-
-
-
-
-
-                        }
-                    });
 
 
                 }

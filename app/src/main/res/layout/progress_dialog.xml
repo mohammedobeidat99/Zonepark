@@ -4,14 +4,7 @@
     android:layout_height="match_parent"
     android:gravity="center">
 
-    <LinearLayout
-        android:layout_width="280dp"
-        android:layout_height="190dp"
-        android:layout_marginTop="80dp"
-        android:background="@drawable/bg_round"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:padding="25dp">
+
 
         <ProgressBar
 
@@ -23,13 +16,14 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="45dp"
             android:fontFamily="sans-serif"
+
             android:text="Loading..."
             android:textSize="20dp"
             android:textStyle="bold" />
 
-    </LinearLayout>
+
 
 
 </RelativeLayout>
