@@ -2,18 +2,22 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/back_scan_divce"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".User.Scan_page">
+    tools:context=".User.Scan_page"
+    >
 
     <Button
         android:id="@+id/scan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="update"
+        android:layout_width="185dp"
+        android:layout_height="59dp"
+        android:drawableEnd="@drawable/arrow_forward"
+        android:gravity="center"
+        android:text="Go to scan"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.702" />
+        app:layout_constraintVertical_bias="0.555" />
 </androidx.constraintlayout.widget.ConstraintLayout>

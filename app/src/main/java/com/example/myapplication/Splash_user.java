@@ -1,4 +1,4 @@
-package com.example.myapplication.Admin;
+package com.example.myapplication;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,17 +8,17 @@ import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.myapplication.R;
+import com.example.myapplication.User.startUser;
 
-public class SplashActivity extends AppCompatActivity {
+public class Splash_user extends AppCompatActivity {
     private boolean isFirstAnimation = false;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_splash);
+        setContentView(R.layout.activity_splash_user);
 
-         /*Simple hold animation to hold ImageView in the centre of the screen at a slightly larger
+
+        /*Simple hold animation to hold ImageView in the centre of the screen at a slightly larger
         scale than the ImageView's original one.*/
         Animation hold = AnimationUtils.loadAnimation(this, R.anim.hold);
 
@@ -38,7 +38,7 @@ public class SplashActivity extends AppCompatActivity {
             public void onAnimationEnd(Animation animation) {
                 if (!isFirstAnimation) {
                     imageView.clearAnimation();
-                    Intent intent = new Intent(SplashActivity.this, MainActivity.class);
+                    Intent intent = new Intent(Splash_user.this, startUser.class);
                     startActivity(intent);
                     finish();
                 }
@@ -71,18 +71,5 @@ public class SplashActivity extends AppCompatActivity {
         });
 
         imageView.startAnimation(hold);
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
 }

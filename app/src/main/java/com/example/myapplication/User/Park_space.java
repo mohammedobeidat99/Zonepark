@@ -67,7 +67,7 @@ public class Park_space extends AppCompatActivity {
 
 
 
-        ///////////////////
+
 
 
 

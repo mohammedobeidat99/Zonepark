@@ -3,6 +3,8 @@ package com.example.myapplication.User;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -32,6 +34,11 @@ public class startUser extends AppCompatActivity {
         data= FirebaseDatabase.getInstance().getReference().child("cars_number");
         user1=new user();
         tv11.setText("Terms & Policy");
+
+        overridePendingTransition(0,0);
+        View relativeLayout=findViewById(R.id.login_container);
+        Animation animation= AnimationUtils.loadAnimation(this,android.R.anim.fade_in);
+       //relativeLayout.startAnimation(animation);
 
         start.setOnClickListener(new View.OnClickListener() {
             @Override

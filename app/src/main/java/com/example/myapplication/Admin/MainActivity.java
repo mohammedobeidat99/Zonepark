@@ -51,6 +51,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         password=(EditText) findViewById(R.id.password);
         mAuth = FirebaseAuth.getInstance();
         dialog=new Dialog(this);
+
         overridePendingTransition(0,0);
         View relativeLayout=findViewById(R.id.login_container);
         Animation animation= AnimationUtils.loadAnimation(this,android.R.anim.fade_in);

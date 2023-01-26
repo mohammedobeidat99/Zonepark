@@ -1,19 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
     android:background="@drawable/back_register"
     tools:context=".User.startUser">
 
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="-40dp"
+        android:layout_marginEnd="65dp"
+        android:gravity="center"
+        android:text="Welcom to ZonePark"
+        android:textColor="@color/title"
+        android:textSize="27dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.551"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/header_icon"
+        android:layout_width="@dimen/image_header_dimen2"
+        android:layout_height="@dimen/image_header_dimen2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/image_header_top_margin2"
+        android:src="@drawable/mmmmmm" />
 
     <com.google.android.material.textfield.TextInputLayout
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
         android:layout_width="280dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="350dp"
+        android:layout_marginTop="30dp"
         app:counterEnabled="true"
         app:counterMaxLength="8"
         app:layout_constraintEnd_toEndOf="parent"
@@ -28,6 +54,7 @@
             android:layout_gravity="center"
             android:drawableStart="@drawable/car_custom"
             android:drawablePadding="10dp"
+
             android:ems="10"
 
 
@@ -40,29 +67,12 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="68dp"
-        android:layout_marginEnd="65dp"
-        android:gravity="center"
-        android:text="Welcom to ZonePark"
-        android:textColor="@color/title"
-        android:textSize="27dp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.551"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <Button
         android:id="@+id/start"
         android:layout_width="248dp"
         android:layout_height="40dp"
         android:layout_marginStart="82dp"
-        android:layout_marginTop="450dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="82dp"
         android:gravity="center"
         android:background="@drawable/button_shape"
@@ -76,7 +86,7 @@
         android:layout_width="136dp"
         android:layout_height="38dp"
         android:layout_marginStart="134dp"
-        android:layout_marginTop="572dp"
+        android:layout_marginTop="72dp"
         android:layout_marginEnd="134dp"
         android:gravity="center"
         android:text="TermsPolicy"
@@ -86,4 +96,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</LinearLayout>

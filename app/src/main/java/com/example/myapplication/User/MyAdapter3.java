@@ -78,8 +78,9 @@ public class MyAdapter3 extends RecyclerView.Adapter<MyAdapter3.MyViewHolder> {
             @Override
             public void onClick(View view) {
 
-                View modelBottomSheet = LayoutInflater.from(context).inflate(R.layout.item_scan, null);
-                BottomSheetDialog dialog = new BottomSheetDialog(context);
+                View modelBottomSheet = LayoutInflater.from(context).inflate(R.layout.item_scan,null);
+
+                BottomSheetDialog dialog = new BottomSheetDialog(context,R.style.BottomSheetDialogTheme);
                 dialog.setContentView(modelBottomSheet);
                 dialog.show();
 
@@ -102,7 +103,6 @@ public class MyAdapter3 extends RecyclerView.Adapter<MyAdapter3.MyViewHolder> {
                             Intent intent = new Intent(context, Scan_page.class);
                             intent.putExtra("num",spacePark.getId());
                             intent.putExtra("s1",spacePark.getStatus());
-                            ////////////////////////////////////////////////////////////
                             intent.putExtra("c",spacePark.getCname());
                             intent.putExtra("m",spacePark.getMname());
                             context.startActivity(intent);
